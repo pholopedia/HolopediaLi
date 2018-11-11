@@ -1,0 +1,25 @@
+<div class="menuHologram">
+  <!-- <div *ngIf="itemHoveredName != 'Home'" id="revolverMaps"></div> -->
+  <div class="menuItemPreviewName">{{itemPreviewName}}</div>
+  <img [hidden]="itemHoveredName != 'Quantum Neurofeedback'" src="http://www.bubbwebhost.co.uk/JMatthews/Block/pictures/brain.gif" alt=""> 
+  <div [hidden]="itemHoveredName != 'Home'" id="revolverMaps"></div>
+  <app-coin [hidden]="itemHoveredName != 'Projects'" [coinObverse]="getHexSide(doctorCoin.ObverseSettings, '91%')" [coinReverse]="getHexSide(doctorCoin.ReverseSettings)"
+    [subtitle]="'Quantum Foundation Quantum Qtum'" [obverseText]="doctorCoin.ObverseText"></app-coin>
+  <app-coin [hidden]="itemHoveredName != 'Quantum Foundation'" [coinObverse]="getHexSide(qfCoin.ObverseSettings, '91%')" [coinReverse]="getHexSide(qfCoin.ReverseSettings)"
+    [subtitle]="'Quantum Foundation Quantum Qtum'" [obverseText]="qfCoin.ObverseText"></app-coin>
+</div>
+
+
+<div class="sevenlevels">
+  <!-- <div *ngFor="let item of menuItems">
+      <div class="menuitem" (click)="menuItemClicked(item)">{{item.Name}}</div>  rotate('+-i*2+'deg)
+  </div> -->
+  <div *ngFor="let item of menuItems">
+    <div class="menuitem" (click)="menuItemClicked(item)">
+      <span *ngFor="let nameLetter of item.Name.split(''); let i = index;" (mouseenter)="menuItemHovered(item)" (mouseleave)="menuItemBlur()"
+        [ngStyle]="{'color': item.Color , 'display': 'inline-block', 'transform': ' translateY('+sineVal(i, item.Name.length)+'px)'}">
+        {{ (nameLetter != ' ') ? nameLetter : '&nbsp;' }}
+      </span>
+    </div>
+  </div>
+</div>

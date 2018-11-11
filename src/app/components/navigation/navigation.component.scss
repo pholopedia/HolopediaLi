@@ -1,0 +1,42 @@
+.sevenlevels {
+  background-image: url("/assets/images/sevenlevels.png");
+  background-repeat: no-repeat;
+  height: 700px;
+  padding-top: 69px;
+  text-align: center;
+  width: 406px;
+  font-size: 28px;
+  line-height: 45px;
+  margin: -84px auto;
+  background-size: 100% 50%;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.sevenlevels .menuitem {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+path {
+  fill: red;
+}
+
+text {
+  fill: #FF9800;
+}
+
+.revolverMaps {
+  margin-bottom: -110px;
+}
+
+.menuHologram {
+  height: 300px;
+}
+
+.menuItemPreviewName {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 300px; 
+  font-size: 48px;
+}
