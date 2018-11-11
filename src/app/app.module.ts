@@ -11,6 +11,9 @@ import { ContactComponent } from './components/pages/contact/contact.component';
 import { SocialComponent } from './components/pages/social/social.component';
 import { ProjectsComponent } from './components/pages/projects/projects.component';
 import { GamesComponent } from './components/pages/games/games.component';
+import { FacebookModule } from 'ngx-facebook';
+import { NgxTwitterTimelineModule } from 'ngx-twitter-timeline';
+import { EmbedVideo } from 'ngx-embed-video/dist';
 
 @NgModule({
   declarations: [
@@ -22,12 +25,15 @@ import { GamesComponent } from './components/pages/games/games.component';
     ContactComponent,
     SocialComponent,
     ProjectsComponent,
-    GamesComponent
+    GamesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
+    EmbedVideo.forRoot(),
+    FacebookModule.forRoot(),
+    NgxTwitterTimelineModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,28 @@
-<p>
-  social works!
-</p>
+<div class="social-page" fxLayout="row" fxLayout.lt-md="column" fxFlexFill>
+  <div class="youtube column-3" fxFlex="30">
+    <div class="socialimage">
+      <img src="assets/images/social/youtube.png" alt="">
+    </div>
+    <div class="aspect-ratio">
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLZCHH_4VqpRhwzNjMBHJOcfdMhYZzC0K2" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    </div>
+    <div class="aspect-ratio">
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLBlBclZ8UNWYyUtcpXD6EAtU8iLnN20HI&index=13" frameborder="0"
+        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="facebook column-3" fxFlex="30">
+    <div class="socialimage">
+      <img src="assets/images/social/facebook.png" alt="">
+    </div>
+    <fb-page href="https://www.facebook.com/PHolopedia-749113741936284/" data-tabs="timeline"></fb-page>
+  </div>
+  <div class="twitter column-3" fxFlex="30" fxFlex.xs="100">
+    <div class="socialimage">
+      <img src="assets/images/social/twitter.png" alt="">
+    </div>
+    <ngx-twitter-timeline [data]="{sourceType: 'url', url: 'https://twitter.com/HolopediaL'}" [opts]="{tweetLimit: 5}"></ngx-twitter-timeline>
+  </div>
+</div>
