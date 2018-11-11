@@ -1,3 +1,9 @@
 <app-topbar></app-topbar>
-<app-navigation></app-navigation>
-<router-outlet></router-outlet>
+<div class="content" fxLayout="row" fxLayout.lt-md="column" fxFlexFill>
+  <div class="navigation" fxFlex="30" fxFlex.lt-md="100">
+    <app-navigation></app-navigation>
+  </div>
+  <div class="navigation" fxFlex="70">
+    <router-outlet></router-outlet>
+  </div>
+</div>
