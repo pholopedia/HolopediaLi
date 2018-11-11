@@ -14,6 +14,7 @@ import { GamesComponent } from './components/pages/games/games.component';
 import { FacebookModule } from 'ngx-facebook';
 import { NgxTwitterTimelineModule } from 'ngx-twitter-timeline';
 import { EmbedVideo } from 'ngx-embed-video/dist';
+import { ProjectStarComponent } from './components/elements/project-star/project-star.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { EmbedVideo } from 'ngx-embed-video/dist';
     SocialComponent,
     ProjectsComponent,
     GamesComponent,
+    ProjectStarComponent,
   ],
   imports: [
     BrowserModule,
