@@ -1,0 +1,44 @@
+body{
+  padding: 25px;
+}
+
+@mixin hexagon($width: 100px, $color: #19c, $dir: down){
+  // Math for calculating the height of equilateral triangle
+  // Rounding this up helps a little with sub pixel rendering BS
+  $height: ceil($width*(1.73205081)/2);
+  height: $height;
+  width: $width;
+  position: relative;
+  // might as well center the thing
+  margin: 0 auto;
+  transform-origin: 0 0;
+  transform: translateX($width/2) rotate(30deg);
+  .triangle{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: $height/2 $width/4 0;
+    border-color: red transparent;
+    transform-origin: $width/4 $height/2;
+    // Sass function to auto generate rotation
+    $deg: 60deg;
+    @for $i from 1 through 5{
+      &:nth-child(#{$i}){
+        transform: rotate(#{$deg});
+      }
+      $deg: $deg + 60;
+    }
+    &:nth-child(5), &:nth-child(6){
+      border-color: purple transparent;
+    }
+    &:nth-child(1), &:nth-child(2){
+      border-color: turquoise transparent;
+    }
+  }
+}
+
+.hexagon{
+  @include hexagon(300px);
+  zoom: 2;
+}
