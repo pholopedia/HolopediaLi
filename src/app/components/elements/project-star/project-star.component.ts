@@ -62,7 +62,6 @@ export class ProjectStarComponent implements OnInit {
   ngOnInit() {
 
     this.route.params.subscribe(params => {
-      console.log('params', params);
       this.currentStep = (params.project)? params.project : "HolopediaLi";
       this.title = this.currentStep;
       this.description = (this.currentStep == "HolopediaLi")? this.defaultDescription: "";

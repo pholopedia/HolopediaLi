@@ -30,7 +30,6 @@ export class GamesComponent implements OnInit {
 
   flicker(elemClass: any) {
     let elem = this.triangles.filter(e => e.class == elemClass);
-    console.log('elem', elem);
     var result: HTMLCollectionOf<Element> = document.getElementsByClassName(elemClass);
     for(var i=0, len=result.length; i<len; i++)
     {
@@ -38,7 +37,6 @@ export class GamesComponent implements OnInit {
       element.style["border-color"] = elem[this.colorsIndex].colors[this.colorsIndex];
     }
     this.colorsIndex = (this.colorsIndex + 1) % this.colors.length;
-    console.log('result', result);
   }
 
 }

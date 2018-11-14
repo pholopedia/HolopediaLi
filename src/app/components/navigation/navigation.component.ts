@@ -16,7 +16,7 @@ export class NavigationComponent implements OnInit {
     new MenuItem("Contact", "/contact", "#F9A939"),
     new MenuItem("Social", "/social", "#E999EC"),
     new MenuItem("Projects", "/projects", "#98D9ED", { hasPreview: true }),
-    new MenuItem("Quantum Neurofeedback", "http://biofeedback.malopolska.pl/", "#92EC77", { isExternal: true }),
+    new MenuItem("Quantum Neurofeedback", "http://biofeedback.malopolska.pl/", "#92EC77", { isExternal: true, hasPreview: true }),
     new MenuItem("Quantum Foundation", "http://quantumfoundation.eu/", "#F9E637", { isExternal: true, hasPreview: true }),
     new MenuItem("Games", "/games", "#B95670"),
     // new MainMenuItem("PINS", "https://pinslive.wordpress.com/", "#B95670", true),
@@ -42,7 +42,6 @@ export class NavigationComponent implements OnInit {
     this.loadGlobe();
     this.router.events.subscribe(val => {
       if (val instanceof RoutesRecognized) {
-        console.log(val)
         let selItem = this.menuItems.find(item => item.Link == val.url);
         this.itemSelected = (selItem)? selItem: this.menuItems[0];
         this.itemPreviewName = (!this.itemSelected.Settings.HasPreview) ? this.itemSelected.Name : "";
@@ -85,8 +84,8 @@ export class NavigationComponent implements OnInit {
   }
 
   menuItemBlur() {
-    this.itemPreviewName = (!this.itemSelected.Settings.HasPreview) ? this.itemSelected.Name : "";
-    this.itemHoveredName = this.itemSelected.Name;
+    // this.itemPreviewName = (!this.itemSelected.Settings.HasPreview) ? this.itemSelected.Name : "";
+    // this.itemHoveredName = this.itemSelected.Name;
   }
 
   sineVal(i, l) {
