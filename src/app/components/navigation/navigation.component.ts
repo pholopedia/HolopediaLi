@@ -12,7 +12,7 @@ export class NavigationComponent implements OnInit {
 
 
   menuItems: MenuItem[] = [
-    new MenuItem("Home", "/home", "#4488C5", { hasPreview: true }),
+    new MenuItem("AI Holo", "/home", "#4488C5", { hasPreview: true }),
     new MenuItem("Contact", "/contact", "#F9A939"),
     new MenuItem("Social", "/social", "#E999EC"),
     new MenuItem("Projects", "/projects", "#98D9ED", { hasPreview: true }),
@@ -84,8 +84,8 @@ export class NavigationComponent implements OnInit {
   }
 
   menuItemBlur() {
-    // this.itemPreviewName = (!this.itemSelected.Settings.HasPreview) ? this.itemSelected.Name : "";
-    // this.itemHoveredName = this.itemSelected.Name;
+    this.itemPreviewName = (!this.itemSelected.Settings.HasPreview) ? this.itemSelected.Name : "";
+    this.itemHoveredName = this.itemSelected.Name;
   }
 
   sineVal(i, l) {
