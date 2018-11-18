@@ -7,9 +7,20 @@
   <button class="addHologramButton" (click)="addHologram()">add hologram</button>
 </div>
 
-<div class="hologram" *ngFor="let hologram of holograms">
-  <div class="aspect-ratio">
-    <iframe [src]="hologram.url | safe: 'resourceUrl'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div *ngIf="selectedHologram" class="aspect-ratio selected-hologram">
+  <iframe [src]="selectedHologram.url | safe: 'resourceUrl'" frameborder="0" allow="autoplay; encrypted-media"
+    allowfullscreen></iframe>
+</div>
+
+<div class="holograms">
+  <div class="hologram" *ngFor="let hologram of holograms" (mouseenter)="hologram.hovered = true" (mouseleave)="hologram.hovered = false">
+    <div class="aspect-ratio hologram-icon">
+      <div class="hologramOverlay" *ngIf="hologram.hovered">
+        <div class="icon show" (click)="selectHologram(hologram)">Show</div>
+      </div>
+      <iframe [src]="hologram.url + '?showinfo=0&controls=0&autohide=1' | safe: 'resourceUrl'" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    </div>
   </div>
 </div>
 
@@ -19,8 +30,8 @@
   <div fxFlex="60">
 
     <div class="sketchfab-embed-wrapper">
-      <iframe width="100%" src="https://sketchfab.com/models/386ff9ae54ed45c9b191c3b417178ec7/embed" frameborder="0" allow="autoplay; fullscreen; vr"
-        mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      <iframe width="100%" src="https://sketchfab.com/models/386ff9ae54ed45c9b191c3b417178ec7/embed" frameborder="0"
+        allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
     </div>
     Holopedia ~ Future Chemical Substance Proposed Holographic View
   </div>

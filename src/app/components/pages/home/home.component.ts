@@ -5,6 +5,7 @@ import { HologramsService } from '../../../services/holograms/holograms.service'
 import { Hologram } from '../../../services/holograms/hologram.model';
 // import { DomSanitizationService } from '@angular/platform-browser';
 import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl } from '@angular/platform-browser';
+import { isNgTemplate } from '@angular/compiler';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ export class HomeComponent implements OnInit {
 
   holograms: Hologram[];
   hologramUrl: string;
+  selectedHologram: Hologram;
 
   constructor(
     db: AngularFirestore,
@@ -30,6 +32,10 @@ export class HomeComponent implements OnInit {
       this.holograms = holograms;
     });
 
+  }
+
+  selectHologram(hologram: Hologram) {
+    this.selectedHologram = hologram;
   }
 
   addHologram() {
