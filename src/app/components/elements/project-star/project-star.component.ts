@@ -24,14 +24,14 @@ export class ProjectStarComponent implements OnInit {
     new CoinSettings(["Medicine"], { theme: "red" }, [], { url: this.getFctcoinUrl("10") }),
     new CoinSettings(["Holo Master"], { theme: "beige" }, [], { url: "https://quantumfunds.files.wordpress.com/2018/11/factom.png" }),
     new CoinSettings(["Technology", "Therapies", "Tunnels", "Tomography"], { theme: "turquoise" }, [], { url: this.getFctcoinUrl("1") }),
-    new CoinSettings(["Art", "Applications", "Algorithm"], { theme: "orange" }, [], { url: this.getFctcoinUrl("5") }),
+    new CoinSettings(["Artificial Intelligence", "Applications", "Algorithm"], { theme: "orange" }, [], { url: this.getFctcoinUrl("5") }),
     new CoinSettings(["Smart", "Sustainability", "Systems", "Simulations"], { theme: "olive" }, [], { url: this.getFctcoinUrl("2") }),
   ]
 
   starMenuItems = [
     {name: "Put in Your Hologram for Holopedia Li", style: { top: "20px", left: "50%", transform: "translateX(-50%)"}},
     {name: "Medicine", style: { top: "64px", left: "calc(50% - 97px)", transform: "translateX(-100%)"}},
-    {name: "Art", style: { top: "123px", left: "calc(50% - 190px)", transform: "translateX(-100%)"}},
+    {name: "Artificial Intelligence", style: { top: "123px", left: "calc(50% - 190px)", transform: "translateX(-100%)"}},
     {name: "Applications", style: { top: "216px", left: "calc(50% - 246px)", transform: "translateX(-100%)"}},
     {name: "Algorithms", style: { top: "320px", left: "calc(50% - 266px)", transform: "translateX(-100%)"}},
     {name: "Smart", style: { top: "424px", left: "calc(50% - 246px)", transform: "translateX(-100%)"}},
