@@ -10,15 +10,6 @@
   <div class="addHologramHint">Add youtube link f.ex: "https://www.youtube.com/watch?v=OnncbSd7pG8"</div>
 </div>
 
-
-<div *ngIf="selectedHologram" class="aspect-ratio selected-hologram" [ngClass]="{'fullscreen': isFullscreen}">
-  <div *ngIf="isFullscreen" class="fullscreen-hologram-topbar">
-    <div class="closeButton" (click)="isFullscreen = false">X</div>
-  </div>
-  <iframe [src]="selectedHologram.url | safe: 'resourceUrl'" frameborder="0" allow="autoplay; encrypted-media"
-    allowfullscreen></iframe>
-</div>
-
 <div class="holograms">
   <div class="hologram" *ngFor="let hologram of holograms" (mouseenter)="hologram.hovered = true" (mouseleave)="hologram.hovered = false">
     <div class="aspect-ratio hologram-icon">

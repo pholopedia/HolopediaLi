@@ -7,6 +7,7 @@ import { ProjectsComponent } from './components/pages/projects/projects.componen
 import { SocialComponent } from './components/pages/social/social.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { GamesComponent } from './components/pages/games/games.component';
+import { HologramComponent } from './components/pages/hologram/hologram.component';
 
 const routes: Routes = [
   { path: 'home',  component: HomeComponent },
@@ -14,6 +15,8 @@ const routes: Routes = [
   { path: 'social',  component: SocialComponent },
   { path: 'projects',  component: ProjectsComponent },
   { path: 'games',  component: GamesComponent },
+  { path: 'hologram',  component: HologramComponent },
+  { path: 'hologram/:holoid',  component: HologramComponent },
   // individual holo master coin
   { path: 'projects/:project',  component: ProjectsComponent },
   // Default

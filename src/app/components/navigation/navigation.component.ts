@@ -84,8 +84,10 @@ export class NavigationComponent implements OnInit {
   }
 
   menuItemBlur() {
-    this.itemPreviewName = (!this.itemSelected.Settings.HasPreview) ? this.itemSelected.Name : "";
-    this.itemHoveredName = this.itemSelected.Name;
+    if(this.itemSelected) {
+      this.itemPreviewName = (!this.itemSelected.Settings.HasPreview) ? this.itemSelected.Name : "";
+      this.itemHoveredName = this.itemSelected.Name;
+    }
   }
 
   sineVal(i, l) {

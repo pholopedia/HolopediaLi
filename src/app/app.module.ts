@@ -24,6 +24,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { SafePipe } from './pipes/safe.pipe';
+import { HologramComponent } from './components/pages/hologram/hologram.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SafePipe } from './pipes/safe.pipe';
     GamesComponent,
     ProjectStarComponent,
     SafePipe,
+    HologramComponent,
   ],
   imports: [
     BrowserModule,
