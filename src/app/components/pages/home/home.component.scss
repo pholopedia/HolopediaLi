@@ -1,3 +1,11 @@
+.header {
+  text-align: center;
+
+  img {
+    height: 160px;
+  }
+}
+
 .sketchfab-embed-wrapper {
   padding-bottom:66.66%;
   position: relative;
@@ -7,6 +15,7 @@
   width:100%;
   height:100%;
   position: absolute;
+
 }
 
 .addHologramHint {
@@ -16,7 +25,7 @@
 
 .addHologram {
   width: 60%;
-  margin: 60px auto;
+  margin: 30px auto;
 }
 
 .addHologramText {
@@ -45,6 +54,29 @@
     width: 100%;
     height: 0;
     padding-bottom: 51%;
+
+    &.fullscreen {
+      position:fixed; top:40px; left:0px; 
+      bottom:0px; right:0px; width:100%; 
+      height:calc(100% - 40px); border:none; 
+      margin:0; padding:0; z-index:999999;
+      
+      .fullscreen-hologram-topbar {
+        background-color: #4f0000d1;
+        height: 40px;
+        width: 100%;
+        margin-top: -40px;
+
+        .closeButton {
+          font-size: 24px;
+          font-weight: bold;
+          color: #ffeeee;
+          padding: 5px 32px;
+          float: right;
+          cursor: pointer;
+        }
+      }
+    }
   }
 
   &.hologram-icon {
@@ -56,16 +88,23 @@
 .hologramOverlay {
   z-index: 1000;
   background-color: #480000b0;
+  cursor: pointer;
 
-  .icon {
-    width: 54px;
-    border-radius: 6px;
-    background-color: #fa0000f0;
-    margin: 24px auto;
-    cursor: pointer;
-    color: #ffeeee;
-    padding: 18px 0;
+  .icons {
     text-align: center;
+    width: 100%;
+
+    .icon {
+      width: 54px;
+      border-radius: 6px;
+      background-color: #fa0000f0;
+      margin: 24px 8px;
+      cursor: pointer;
+      color: #ffeeee;
+      padding: 18px 0;
+      text-align: center;
+      display: inline-block;
+    }
   }
 }
 

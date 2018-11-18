@@ -1,13 +1,22 @@
 <h1>HolopediaLi welcomes you</h1>
-<h2>Share your favourite holograms!</h2>
 
-<div class="addHologram">
-  <div class="addHologramHint">Add youtube link f.ex: "https://www.youtube.com/watch?v=OnncbSd7pG8"</div>
-  <input class="addHologramText" type="text" [(ngModel)]="hologramUrl">
-  <button class="addHologramButton" (click)="addHologram()">add hologram</button>
+<div class="header">
+  <h2>Share your favourite holograms!</h2>
+  <img src="https://media.giphy.com/media/9O1eMxSOSQLEk/giphy.gif" alt="">
+  <img src="https://media.giphy.com/media/6HGIvIr8xVzyM/giphy.gif" alt="">
 </div>
 
-<div *ngIf="selectedHologram" class="aspect-ratio selected-hologram">
+<div class="addHologram">
+  <input class="addHologramText" type="text" [(ngModel)]="hologramUrl">
+  <button class="addHologramButton" (click)="addHologram()">add hologram</button>
+  <div class="addHologramHint">Add youtube link f.ex: "https://www.youtube.com/watch?v=OnncbSd7pG8"</div>
+</div>
+
+
+<div *ngIf="selectedHologram" class="aspect-ratio selected-hologram" [ngClass]="{'fullscreen': isFullscreen}">
+  <div *ngIf="isFullscreen" class="fullscreen-hologram-topbar">
+    <div class="closeButton" (click)="isFullscreen = false">X</div>
+  </div>
   <iframe [src]="selectedHologram.url | safe: 'resourceUrl'" frameborder="0" allow="autoplay; encrypted-media"
     allowfullscreen></iframe>
 </div>
@@ -15,11 +24,14 @@
 <div class="holograms">
   <div class="hologram" *ngFor="let hologram of holograms" (mouseenter)="hologram.hovered = true" (mouseleave)="hologram.hovered = false">
     <div class="aspect-ratio hologram-icon">
-      <div class="hologramOverlay" *ngIf="hologram.hovered">
-        <div class="icon show" (click)="selectHologram(hologram)">Show</div>
+      <div class="hologramOverlay" (click)="selectHologram(hologram)" *ngIf="hologram.hovered">
+        <div class="icons">
+          <div class="icon show">Show</div>
+          <div class="icon fullscreen" (click)="isFullscreen = true">Full</div>
+        </div>
       </div>
       <iframe [src]="hologram.url + '?showinfo=0&controls=0&autohide=1' | safe: 'resourceUrl'" frameborder="0" allow="autoplay; encrypted-media"
-        allowfullscreen></iframe>
+        allowfullscreen scrolling="no"></iframe>
     </div>
   </div>
 </div>
