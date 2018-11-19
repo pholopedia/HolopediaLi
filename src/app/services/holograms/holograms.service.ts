@@ -16,6 +16,12 @@ export class HologramsService {
   categoriesCollectionName: string = 'hologramCategories';
   isFullscreen: boolean = false;
 
+  public get Sources(): string[] { return [
+    'YouTube',
+    'Vimeo',
+    'Website'
+  ]};
+
   constructor(
     public afs: AngularFirestore,
     public firestoreService: FirestoreService

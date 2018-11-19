@@ -25,6 +25,9 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { SafePipe } from './pipes/safe.pipe';
 import { HologramComponent } from './components/pages/hologram/hologram.component';
+import { CategoriesComponent } from './components/elements/categories/categories.component';
+import { HologramsListComponent } from './components/elements/holograms-list/holograms-list.component';
+import { AddHologramComponent } from './components/elements/add-hologram/add-hologram.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,9 @@ import { HologramComponent } from './components/pages/hologram/hologram.componen
     ProjectStarComponent,
     SafePipe,
     HologramComponent,
+    CategoriesComponent,
+    HologramsListComponent,
+    AddHologramComponent,
   ],
   imports: [
     BrowserModule,

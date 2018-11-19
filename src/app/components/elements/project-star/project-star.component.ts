@@ -29,22 +29,22 @@ export class ProjectStarComponent implements OnInit {
   ]
 
   starMenuItems = [
-    {name: "Put in Your Hologram for Holopedia Li", style: { top: "20px", left: "50%", transform: "translateX(-50%)"}},
-    {name: "Medicine", style: { top: "64px", left: "calc(50% - 97px)", transform: "translateX(-100%)"}},
-    {name: "Artificial Intelligence", style: { top: "123px", left: "calc(50% - 190px)", transform: "translateX(-100%)"}},
-    {name: "Applications", style: { top: "216px", left: "calc(50% - 246px)", transform: "translateX(-100%)"}},
-    {name: "Algorithms", style: { top: "320px", left: "calc(50% - 266px)", transform: "translateX(-100%)"}},
-    {name: "Smart", style: { top: "424px", left: "calc(50% - 246px)", transform: "translateX(-100%)"}},
-    {name: "Sustainability", style: { top: "516px", left: "calc(50% - 190px)", transform: "translateX(-100%)"}},
-    {name: "Systems", style: { top: "574px", left: "calc(50% - 97px)", transform: "translateX(-100%)"}},
-    {name: "Simulations", style: { top: "624px", left: "50%", transform: "translateX(-50%)"}},
-    {name: "Technology", style: { top: "574px", left: "calc(50% + 97px)"}},
-    {name: "Therapies", style: { top: "516px", left: "calc(50% + 190px)"}},
-    {name: "Tunnels", style: { top: "424px", left: "calc(50% + 246px)"}},
-    {name: "Tomography", style: { top: "320px", left: "calc(50% + 266px)"}},
-    {name: "Education", style: { top: "216px", left: "calc(50% + 246px)"}},
-    {name: "Emulation", style: { top: "123px", left: "calc(50% + 190px)"}},
-    {name: "Research", style: { top: "64px", left: "calc(50% + 97px)"}},
+    {name: "Put in Your Hologram for Holopedia Li",   style: { top: "20px",   left: "50%",                transform: "translateX(-50%)"}},
+    {name: "Medicine",                                style: { top: "64px",   left: "calc(50% - 97px)",   transform: "translateX(-100%)"}},
+    {name: "Artificial Intelligence",                 style: { top: "123px",  left: "calc(50% - 190px)",  transform: "translateX(-100%)"}},
+    {name: "Applications",                            style: { top: "216px",  left: "calc(50% - 246px)",  transform: "translateX(-100%)"}},
+    {name: "Algorithms",                              style: { top: "320px",  left: "calc(50% - 266px)",  transform: "translateX(-100%)"}},
+    {name: "Smart",                                   style: { top: "424px",  left: "calc(50% - 246px)",  transform: "translateX(-100%)"}},
+    {name: "Sustainability",                          style: { top: "516px",  left: "calc(50% - 190px)",  transform: "translateX(-100%)"}},
+    {name: "Systems",                                 style: { top: "574px",  left: "calc(50% - 97px)",   transform: "translateX(-100%)"}},
+    {name: "Simulations",                             style: { top: "624px",  left: "50%",                transform: "translateX(-50%)"}},
+    {name: "Technology",                              style: { top: "574px",  left: "calc(50% + 97px)"}},
+    {name: "Therapies",                               style: { top: "516px",  left: "calc(50% + 190px)"}},
+    {name: "Tunnels",                                 style: { top: "424px",  left: "calc(50% + 246px)"}},
+    {name: "Tomography",                              style: { top: "320px",  left: "calc(50% + 266px)"}},
+    {name: "Education",                               style: { top: "216px",  left: "calc(50% + 246px)"}},
+    {name: "Emulation",                               style: { top: "123px",  left: "calc(50% + 190px)"}},
+    {name: "Research",                                style: { top: "64px",   left: "calc(50% + 97px)"}},
   ]
   
 

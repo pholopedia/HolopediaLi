@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
 import { HologramsService } from '../../../services/holograms/holograms.service';
-import { Hologram } from '../../../services/holograms/hologram.model';
-import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl } from '@angular/platform-browser';
-import { isNgTemplate } from '@angular/compiler';
-import { Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
+import { ProjectsService } from 'src/app/services/projects/projects.service';
 
 @Component({
   selector: 'app-home',
@@ -14,45 +9,18 @@ import { Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  holograms: Hologram[];
-  hologramUrl: string;
-  selectedHologram: Hologram;
+  projectsNames: string[];
+  sourcesNames: string[];
 
   constructor(
-    db: AngularFirestore,
     public hologramsService: HologramsService,
-    protected sanitizer: DomSanitizer,
-    private router: Router,
+    private projectsService: ProjectsService,
     ) {
-
   }
 
   ngOnInit() {
-
-    this.hologramsService.get().subscribe(holograms => {
-      this.holograms = holograms;
-    });
-
+    this.projectsNames = this.projectsService.MasterProjectsNames;
+    this.sourcesNames = this.hologramsService.Sources;
   }
-
-  selectHologram(hologram: Hologram) {
-    this.selectedHologram = hologram;
-    this.router.navigate(['/hologram/' + hologram.id]);
-  }
-
-  addHologram() {
-    var item: Hologram = {
-      id: "sampleid",
-      url: this.hologramUrl.replace("watch?v=", "embed/"),
-      title: "sample title",
-      category: "youtube",
-    }
-
-    this.hologramsService.add(item).then((doc: Hologram) => {
-        item.id = doc.id;
-        this.hologramsService.update(item);
-    });
-  }
-
 
 }

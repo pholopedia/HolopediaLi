@@ -6,6 +6,7 @@ import { Hologram } from '../../../services/holograms/hologram.model';
 import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl } from '@angular/platform-browser';
 import { isNgTemplate } from '@angular/compiler';
 import { Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
+import { ProjectsService } from 'src/app/services/projects/projects.service';
 
 
 @Component({
@@ -20,6 +21,8 @@ export class HologramComponent implements OnInit {
   selectedHologram: Hologram;
   categories: Array<string> = new Array<string>();
   reloadHolograms: boolean = true;
+  projectsNames: string[];
+  sourcesNames: string[];
 
   constructor(
     db: AngularFirestore,
@@ -27,35 +30,28 @@ export class HologramComponent implements OnInit {
     protected sanitizer: DomSanitizer,
     private router: Router,
     private route: ActivatedRoute,
-  ) { }
+    private projectsService: ProjectsService,
+    ) { }
 
   ngOnInit() {
-
+    this.projectsNames = this.projectsService.MasterProjectsNames;
+    this.sourcesNames = this.hologramsService.Sources;
     this.hologramsService.get().subscribe(holograms => {
-      console.log('holograms', holograms);
-
-      holograms.forEach(hologram => {
-        if (!this.categories.includes(hologram.category))
-          this.categories.push(hologram.category);
-      });
-      console.log('this.categories', this.categories);
 
       this.holograms = holograms;
       this.filteredHolograms = holograms;
 
       this.route.params.subscribe(params => {
-        console.log('params.holoid', params.holoid);
         this.selectedHologram = holograms.find(hologram => hologram.id == params.holoid);
       });
 
-      // this.selectedHologram = this.holograms.find(hologram => hologram.id = params.holoid);
     });
 
   }
 
-  selectCategory(category: string) {
+  selectCategory(category?: string) {
     if (category) {
-      this.filteredHolograms = this.holograms.filter(hologram => hologram.category == category);
+      this.filteredHolograms = this.holograms.filter(hologram => hologram.source == category);
     } else {
       this.filteredHolograms = this.holograms;
     }
@@ -72,7 +68,7 @@ export class HologramComponent implements OnInit {
       id: "sampleid",
       url: this.hologramUrl.replace("watch?v=", "embed/"),
       title: "sample title",
-      category: "youtube",
+      source: "youtube",
     }
 
     this.hologramsService.add(item).then((doc: Hologram) => {

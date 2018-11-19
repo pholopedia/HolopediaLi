@@ -1,0 +1,9 @@
+{{categoryType}}
+<div class="categories">
+    <div class="category" [ngClass]="{'selected': !selectedCategory}" (click)="selectCategory()">
+      All
+    </div>
+    <div class="category" [ngClass]="{'selected': selectedCategory == category}" *ngFor="let category of categoriesNames" (click)="selectCategory(category)">
+      {{category}}
+    </div>
+  </div>
