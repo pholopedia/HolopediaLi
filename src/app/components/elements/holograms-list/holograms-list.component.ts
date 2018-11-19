@@ -51,6 +51,7 @@ export class HologramsListComponent implements OnInit {
   }
 
   showFullscreen() {
+    this.hologramsService.isFullscreen = true;
     this.toggleFullscreen.emit(true);
   }
 

@@ -23,6 +23,7 @@ export class HologramComponent implements OnInit {
   reloadHolograms: boolean = true;
   projectsNames: string[];
   sourcesNames: string[];
+  isFullscreen: boolean = false;
 
   constructor(
     db: AngularFirestore,
@@ -37,6 +38,7 @@ export class HologramComponent implements OnInit {
   ngOnInit() {
     this.projectsNames = this.projectsService.MasterProjectsNames;
     this.sourcesNames = this.hologramsService.Sources;
+    this.isFullscreen = this.hologramsService.isFullscreen;
     this.hologramsService.get().subscribe(holograms => {
 
       this.holograms = holograms;
