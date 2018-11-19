@@ -81,7 +81,7 @@ export class HologramComponent implements OnInit {
   }
 
   returnToMenu() {
-    this._location.back();
+    this.router.navigate(['/home']);
   }
 
 }

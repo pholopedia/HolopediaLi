@@ -1,10 +1,7 @@
 <div class="content" fxLayout="row" fxLayout.lt-md="column" fxFlexFill>
   <div class="navigation" fxFlex="20" fxFlex.lt-md="100">
     <div class="back-button" (click)="returnToMenu()">🡄 Back</div>
-    <div class="addHologram">
-      <input class="addHologramText" type="text" [(ngModel)]="hologramUrl">
-      <button class="addHologramButton" (click)="addHologram()">add hologram</button>
-    </div>
+    <app-add-hologram></app-add-hologram>
     <app-categories [categoriesNames]="projectsNames" [categoryType]="'project'"></app-categories>
     <app-categories [categoriesNames]="sourcesNames" [categoryType]="'source'"></app-categories>
     <app-holograms-list [isInSidebar]="true" (toggleFullscreen)="isFullscreen = true"></app-holograms-list>
