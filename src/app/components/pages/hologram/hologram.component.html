@@ -7,7 +7,7 @@
     </div>
     <app-categories [categoriesNames]="projectsNames" [categoryType]="'project'"></app-categories>
     <app-categories [categoriesNames]="sourcesNames" [categoryType]="'source'"></app-categories>
-    <app-holograms-list></app-holograms-list>
+    <app-holograms-list [isInSidebar]="true" (toggleFullscreen)="isFullscreen = true"></app-holograms-list>
   </div>
   <div class="pages" fxFlex="80">
     <div *ngIf="selectedHologram" class="aspect-ratio selected-hologram" [ngClass]="{'fullscreen': isFullscreen}">

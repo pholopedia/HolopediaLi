@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Hologram } from 'src/app/services/holograms/hologram.model';
 import { Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
 import { HologramsService } from 'src/app/services/holograms/holograms.service';
@@ -9,6 +9,9 @@ import { HologramsService } from 'src/app/services/holograms/holograms.service';
   styleUrls: ['./holograms-list.component.scss']
 })
 export class HologramsListComponent implements OnInit {
+
+  @Input() isInSidebar: boolean;
+  @Output() toggleFullscreen:EventEmitter<boolean> = new EventEmitter(true);
 
   selectedHologram: Hologram;
   holograms: Hologram[];
@@ -46,4 +49,9 @@ export class HologramsListComponent implements OnInit {
     this.selectedHologram = hologram;
     this.router.navigate(['/hologram/' + hologram.id], { queryParamsHandling: "preserve" });
   }
+
+  showFullscreen() {
+    this.toggleFullscreen.emit(true);
+  }
+
 }
