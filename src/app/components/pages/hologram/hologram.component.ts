@@ -7,7 +7,7 @@ import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl
 import { isNgTemplate } from '@angular/compiler';
 import { Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
 import { ProjectsService } from 'src/app/services/projects/projects.service';
-
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-hologram',
@@ -31,6 +31,7 @@ export class HologramComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private projectsService: ProjectsService,
+    private _location: Location
     ) { }
 
   ngOnInit() {
@@ -78,7 +79,7 @@ export class HologramComponent implements OnInit {
   }
 
   returnToMenu() {
-    this.router.navigate(['/home']);
+    this._location.back();
   }
 
 }

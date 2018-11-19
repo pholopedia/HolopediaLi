@@ -28,7 +28,7 @@ export class ProjectStarComponent implements OnInit {
     new CoinSettings(["Smart", "Sustainability", "Systems", "Simulations"], { theme: "olive" }, [], { url: this.getFctcoinUrl("2") }),
   ]
 
-  starMenuItems = [
+  projects = [
     {name: "Put in Your Hologram for Holopedia Li",   style: { top: "20px",   left: "50%",                transform: "translateX(-50%)"}},
     {name: "Medicine",                                style: { top: "64px",   left: "calc(50% - 97px)",   transform: "translateX(-100%)"}},
     {name: "Artificial Intelligence",                 style: { top: "123px",  left: "calc(50% - 190px)",  transform: "translateX(-100%)"}},
@@ -55,6 +55,7 @@ export class ProjectStarComponent implements OnInit {
   currentStep: string;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
   ) { 
   }
@@ -91,6 +92,14 @@ export class ProjectStarComponent implements OnInit {
   }
 
   selectHex(obverse, event: MouseEvent) {
+  }
+
+  selectProject(project) {
+    if (project.name != "Put in Your Hologram for Holopedia Li") {
+      this.router.navigate(['/hologram'], { queryParams: {'project': project.name} });
+    } else {
+      this.router.navigate(['/hologram']);
+    }
   }
 
 }

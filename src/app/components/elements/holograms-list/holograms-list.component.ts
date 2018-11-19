@@ -43,8 +43,7 @@ export class HologramsListComponent implements OnInit {
   }
 
   selectHologram(hologram: Hologram) {
-    console.log('hologram', hologram)
     this.selectedHologram = hologram;
-    this.router.navigate(['/hologram/' + hologram.id]);
+    this.router.navigate(['/hologram/' + hologram.id], { queryParamsHandling: "preserve" });
   }
 }

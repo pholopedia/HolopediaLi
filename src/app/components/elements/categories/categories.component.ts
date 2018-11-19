@@ -35,7 +35,7 @@ export class CategoriesComponent implements OnInit {
 
     // Do something with the params
     queryParams[this.categoryType] = category;
-    this.router.navigate(['.'], { queryParams: queryParams });
+     this.router.navigate([], {  queryParams: queryParams });
   }
 
 }

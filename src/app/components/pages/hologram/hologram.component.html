@@ -2,25 +2,12 @@
   <div class="navigation" fxFlex="20" fxFlex.lt-md="100">
     <div class="back-button" (click)="returnToMenu()">🡄 Back</div>
     <div class="addHologram">
-        <input class="addHologramText" type="text" [(ngModel)]="hologramUrl">
-        <button class="addHologramButton" (click)="addHologram()">add hologram</button>
-      </div>
-      <app-categories [categoriesNames]="projectsNames" [categoryType]="'project'"></app-categories>
-      <app-categories [categoriesNames]="sourcesNames" [categoryType]="'source'"></app-categories>
-    <div class="holograms">
-      <div class="hologram" *ngFor="let hologram of filteredHolograms" (mouseenter)="hologram.hovered = true" (mouseleave)="hologram.hovered = false">
-        <div class="aspect-ratio hologram-icon">
-          <div class="hologramOverlay" (click)="selectHologram(hologram)" *ngIf="hologram.hovered">
-            <div class="icons">
-              <div class="icon show">Show</div>
-              <div class="icon fullscreen" (click)="isFullscreen = true">Full</div>
-            </div>
-          </div>
-          <iframe [src]="hologram.url + '?showinfo=0&controls=0&autohide=1' | safe: 'resourceUrl'" frameborder="0"
-            allow="autoplay; encrypted-media" allowfullscreen scrolling="no"></iframe>
-        </div>
-      </div>
+      <input class="addHologramText" type="text" [(ngModel)]="hologramUrl">
+      <button class="addHologramButton" (click)="addHologram()">add hologram</button>
     </div>
+    <app-categories [categoriesNames]="projectsNames" [categoryType]="'project'"></app-categories>
+    <app-categories [categoriesNames]="sourcesNames" [categoryType]="'source'"></app-categories>
+    <app-holograms-list></app-holograms-list>
   </div>
   <div class="pages" fxFlex="80">
     <div *ngIf="selectedHologram" class="aspect-ratio selected-hologram" [ngClass]="{'fullscreen': isFullscreen}">
