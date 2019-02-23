@@ -12,16 +12,15 @@ export class NavigationComponent implements OnInit {
 
 
   menuItems: MenuItem[] = [
-    new MenuItem("AI Holo", "/home", "#4488C5", { hasPreview: true }),
-    new MenuItem("Contact", "/contact", "#F9A939"),
-    new MenuItem("Social", "/social", "#E999EC"),
-    new MenuItem("Projects", "/projects", "#98D9ED", { hasPreview: true }),
-    new MenuItem("Quantum Neurofeedback", "http://biofeedback.malopolska.pl/", "#92EC77", { isExternal: true, hasPreview: true }),
-    new MenuItem("Quantum Foundation", "http://quantumfoundation.eu/", "#F9E637", { isExternal: true, hasPreview: true }),
-    new MenuItem("Games", "/games", "#B95670"),
-    // new MainMenuItem("PINS", "https://pinslive.wordpress.com/", "#B95670", true),
+    new MenuItem("AI Holo", "/home", "#b9d4ec", { hasPreview: true }),
+    new MenuItem("Contact", "/contact", "#ffe2b9"),
+    new MenuItem("Social", "/social", "#f1c5f3"),
+    new MenuItem("Projects", "/projects", "#caecf7", { hasPreview: true }),
+    new MenuItem("Quantum Foundation Portals", "https://quantumfoundation.github.io/", "#bff5af", { isExternal: true }),
+    new MenuItem("Quantum Neurofeedback", "http://biofeedback.malopolska.pl/", "#ece6ac", { isExternal: true, hasPreview: true }),
+    new MenuItem("Quantum Foundation", "http://quantumfoundation.eu/", "#fa96ab", { isExternal: true, hasPreview: true }),
   ]
-
+  
 
 
   constructor(
