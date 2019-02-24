@@ -3,6 +3,8 @@ export class CoinSettings {
   ObverseSettings: SideSettings;
   ReverseText: string[];
   ReverseSettings: SideSettings;
+  Style: any;
+  zDegShift: number;
 
   private hexThemes = {
       purple: new SideSettings("purple", "#FFCBFF", "#FFCBFF", true),
@@ -14,7 +16,7 @@ export class CoinSettings {
       olive: new SideSettings("olive", "#F7F5BF", "#F7F5BF", true),
   } 
 
-  constructor(obvText, obvSettings, revText, revSettings) {
+  constructor(obvText, obvSettings, revText, revSettings, zDegShift?, style?) {
       this.ObverseText = obvText;
       if (obvSettings.theme) this.ObverseSettings = this.hexThemes[obvSettings.theme];
       if (obvSettings.url) this.ObverseSettings = new SideSettings(obvSettings.url, "", "");
@@ -22,6 +24,9 @@ export class CoinSettings {
       this.ReverseText = revText;
       if (revSettings.theme) this.ReverseSettings = this.hexThemes[revSettings.theme];
       if (revSettings.url) this.ReverseSettings = new SideSettings(revSettings.url, "", "");
+
+      this.Style = style;
+      this.zDegShift = zDegShift;
   }
 }
 

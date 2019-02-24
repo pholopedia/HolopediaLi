@@ -17,13 +17,20 @@
     </div> -->
     <div *ngFor="let item of menuItems">
       <div class="menuitem" (click)="menuItemClicked(item)">
-        <span *ngFor="let nameLetter of item.Name.split(''); let i = index;" (mouseenter)="menuItemHovered(item)" (mouseleave)="menuItemBlur()"
+        <span 
+          *ngFor="let nameLetter of item.Name.split(''); let i = index;" 
+          (mouseenter)="menuItemHovered(item)" 
+          (mouseleave)="menuItemBlur()"
           [ngStyle]="{'color': item.Color , 'display': 'inline-block', 'transform': ' translateY('+sineVal(i, item.Name.length)+'px)'}">
           {{ (nameLetter != ' ') ? nameLetter : '&nbsp;' }}
         </span>
       </div>
     </div>
     Holopedia Portal
+  </div>
+
+  <div class="additional-links">
+    <a routerLink="/projects/holofactom" routerLinkActive="active">HoloFactom</a>
   </div>
 
 </div>

@@ -28,6 +28,7 @@ import { HologramComponent } from './components/pages/hologram/hologram.componen
 import { CategoriesComponent } from './components/elements/categories/categories.component';
 import { HologramsListComponent } from './components/elements/holograms-list/holograms-list.component';
 import { AddHologramComponent } from './components/elements/add-hologram/add-hologram.component';
+import { HolofactomComponent } from './components/elements/holofactom/holofactom.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AddHologramComponent } from './components/elements/add-hologram/add-hol
     CategoriesComponent,
     HologramsListComponent,
     AddHologramComponent,
+    HolofactomComponent,
   ],
   imports: [
     BrowserModule,

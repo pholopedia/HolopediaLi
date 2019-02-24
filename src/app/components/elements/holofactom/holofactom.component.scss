@@ -1,0 +1,47 @@
+.leftSide {
+  float: left;
+  width: 100%;
+}
+
+
+app-coin {
+  float: left;
+  width: 33.3%;
+  margin-top: -106px;
+}
+
+app-coin:first-child, app-coin:nth-child(6)   {
+  margin-left: 16.6%;
+}
+
+.holoMandala {
+  width: 732px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 536px;
+  margin: auto;
+  zoom: .5;
+}
+
+.holoMandalaCaption {
+float: left;
+text-align: center;
+font-size: 18px;
+width: 100%;
+}
+
+
+
+.starMenu {
+position: relative;
+}
+
+.starMenuItem {
+position: absolute;
+font-size: 24px;
+cursor: pointer;
+}
+
+.starMenuItem:hover {
+font-weight: bold;
+}

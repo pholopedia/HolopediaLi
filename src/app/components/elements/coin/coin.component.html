@@ -1,6 +1,6 @@
 <div class="coincontainer" >
   <div id="tridiv">
-    <div class="scene">
+    <div class="scene" [ngStyle]="{'transform': 'rotateX(-90deg) rotateZ('+ zDegShift +'deg)'}">
       <div class="shape cylinder-2 cyl-2">
         <div class="face bm" [ngStyle]="coinReverse"><div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.1);"></div></div>
         <div class="face tp" [ngStyle]="coinObverse"><div class="photon-shader obverse">{{obverseWord}}</div></div>

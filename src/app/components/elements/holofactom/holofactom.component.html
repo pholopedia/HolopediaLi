@@ -1,0 +1,28 @@
+
+<div class="leftSide">
+
+  <select name="coinBg" id="coinBg" 
+    [(ngModel)]="coinBackgroundSelected"
+    (ngModelChange)="onBackgroundChange($event)">
+    <option 
+      *ngFor="let background of coinBackgrounds" 
+      [value]="background.value">
+      {{background.name}}</option>
+  </select>
+
+  <div class="holoMandala" [ngStyle]="coinBackground.style">
+    <app-coin 
+      *ngFor="let coin of coins" 
+      [coinObverse]="getHexSide(coin.ObverseSettings, '100%')" 
+      [coinReverse]="getHexSide(coin.ReverseSettings)"
+      [subtitle]="'Quantum Foundation Quantum Qtum'" 
+      [obverseText]="coin.ObverseText" 
+      [ngStyle]="coin.Style"
+      [zDegShift]="coin.zDegShift"
+      (click)="selectHex(obverse, $event)">
+    </app-coin>
+  </div>
+  <div class="holoMandalaCaption">
+
+  </div>
+</div>
