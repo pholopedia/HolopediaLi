@@ -1,11 +1,19 @@
 <div class="holograms">
-  <div class="hologram" [ngClass]="{'sidebar': isInSidebar}" *ngFor="let hologram of filteredHolograms" (mouseenter)="hologram.hovered = true"
-    (mouseleave)="hologram.hovered = false">
-    <div class="aspect-ratio hologram-icon">
+  <div 
+    class="hologram" 
+    [ngClass]="{'sidebar': isInSidebar}" 
+    *ngFor="let hologram of filteredHolograms"
+    (mouseenter)="hologram.hovered = true"
+    (mouseleave)="hologram.hovered = false"
+    >
+    <div class="aspect-ratio hologram-icon" >
+        <div class="hologramOverlay switched-off" (click)="selectHologram(hologram)" *ngIf="!hologram.hovered">
+
+        </div>
       <div class="hologramOverlay" (click)="selectHologram(hologram)" *ngIf="hologram.hovered">
         <div class="icons">
-          <div class="icon show">Show</div>
-          <div class="icon fullscreen" (click)="showFullscreen()">Full</div>
+          <div class="icon left show">Show</div>
+          <div class="icon right fullscreen" (click)="showFullscreen()">Full</div>
         </div>
       </div>
       <iframe [src]="hologram.url + '?showinfo=0&controls=0&autohide=1' | safe: 'resourceUrl'" frameborder="0" allow="autoplay; encrypted-media"

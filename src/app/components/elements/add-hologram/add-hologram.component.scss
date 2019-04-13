@@ -1,3 +1,5 @@
+@import "../../../../styles/breakpoints";
+
 .addHologramHint {
   margin: 6px 0;
   opacity: 0.7;
@@ -12,9 +14,24 @@
   width: calc(100% - 140px);
   height: 36px;
   padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .addHologramButton {
   height: 40px;
   width: 100px;
+}
+
+@include bp-down(sm) {
+    .addHologram {
+        display: grid;
+      }
+
+    .addHologramText {
+        width: 100%;
+    }
+
+    .addHologramButton {
+        margin: 10px auto;
+      }
 }
