@@ -16,7 +16,7 @@ export class NavigationComponent implements OnInit {
     new MenuItem("Contact", "/contact"),
     new MenuItem("Social", "/social"),
     new MenuItem("Projects", "/projects", { hasPreview: true }),
-    new MenuItem("CetData", "https://cetdata.wordpress.com/", { isExternal: true }),
+    new MenuItem("CET Quant", "https://cetdata.wordpress.com/", { isExternal: true }),
     new MenuItem("Centrum Quant", "http://biofeedback.malopolska.pl/", { isExternal: true, hasPreview: true }),
     new MenuItem("Quantum Foundation Portals", "https://quantumfoundation.github.io/", { isExternal: true }),
   ]
