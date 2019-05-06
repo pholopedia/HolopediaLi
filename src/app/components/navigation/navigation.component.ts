@@ -12,14 +12,16 @@ export class NavigationComponent implements OnInit {
 
 
   menuItems: MenuItem[] = [
-    new MenuItem("AI Holo", "/home", "#b9d4ec", { hasPreview: true }),
-    new MenuItem("Contact", "/contact", "#ffe2b9"),
-    new MenuItem("Social", "/social", "#f1c5f3"),
-    new MenuItem("Projects", "/projects", "#caecf7", { hasPreview: true }),
-    new MenuItem("Quantum Foundation Portals", "https://quantumfoundation.github.io/", "#bff5af", { isExternal: true }),
-    new MenuItem("Quantum Neurofeedback", "http://biofeedback.malopolska.pl/", "#ece6ac", { isExternal: true, hasPreview: true }),
-    new MenuItem("Quantum Foundation", "http://quantumfoundation.eu/", "#fa96ab", { isExternal: true, hasPreview: true }),
+    new MenuItem("AI Holo", "/home", { hasPreview: true }),
+    new MenuItem("Contact", "/contact"),
+    new MenuItem("Social", "/social"),
+    new MenuItem("Projects", "/projects", { hasPreview: true }),
+    new MenuItem("CetData", "https://cetdata.wordpress.com/", { isExternal: true }),
+    new MenuItem("Centrum Quant", "http://biofeedback.malopolska.pl/", { isExternal: true, hasPreview: true }),
+    new MenuItem("Quantum Foundation Portals", "https://quantumfoundation.github.io/", { isExternal: true }),
   ]
+
+  menuColors = ["#b9d4ec", "#ffe2b9", "#f1c5f3", "#caecf7", "#bff5af", "#ece6ac", "#fa96ab"];
   
 
 

@@ -15,13 +15,13 @@
     <!-- <div *ngFor="let item of menuItems">
         <div class="menuitem" (click)="menuItemClicked(item)">{{item.Name}}</div>  rotate('+-i*2+'deg)
     </div> -->
-    <div *ngFor="let item of menuItems">
-      <div class="menuitem" (click)="menuItemClicked(item)">
+    <div *ngFor="let item of menuItems; let i = index">
+      <div class="menuitem" (click)="menuItemClicked(item)" [ngStyle]="{'color': menuColors[i]}">
         <span 
           *ngFor="let nameLetter of item.Name.split(''); let i = index;" 
           (mouseenter)="menuItemHovered(item)" 
           (mouseleave)="menuItemBlur()"
-          [ngStyle]="{'color': item.Color , 'display': 'inline-block', 'transform': ' translateY('+sineVal(i, item.Name.length)+'px)'}">
+          [ngStyle]="{'display': 'inline-block', 'transform': ' translateY('+sineVal(i, item.Name.length)+'px)'}">
           {{ (nameLetter != ' ') ? nameLetter : '&nbsp;' }}
         </span>
       </div>
