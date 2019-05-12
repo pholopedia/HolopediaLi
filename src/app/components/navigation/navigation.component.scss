@@ -46,7 +46,14 @@ text {
   font-size: 32px;
 }
 
-.additional-links {
-  padding: 40px;
-  font-size: 30px;
+.widget {
+  font-size: 26px;
+  text-align: center;
+  margin: 40px 20px;
+  font-weight: 600;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+  }
 }

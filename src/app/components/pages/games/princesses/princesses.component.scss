@@ -1,0 +1,57 @@
+.game-controls {
+  margin-bottom: 30px;
+  font-size: 30px;
+
+  & > * {
+    margin-right: 20px;
+  }
+
+  .start-game {
+    font-weight: bold;
+    background: orange;
+    padding: 3px 10px;
+    cursor: pointer;
+  }
+}
+
+.game-content {
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+
+  img {
+    width: 100%;
+  }
+
+  .color {
+    cursor: pointer;
+
+    .color_left {
+      background: red;
+      display: inline-block;
+      width: 50%;
+      height: 100%;
+    }
+    .color_right {
+      background: turquoise;
+      display: inline-block;
+      width: 50%;
+      height: 100%;
+    }
+    
+  }
+
+  .animate_left {
+    animation: flicker 0.085s infinite;
+  }
+
+  .animate_right {
+    animation: flicker 0.065s infinite;
+  }
+}
+
+@keyframes flicker {
+  0%   { opacity: 0.5; }
+  49%   { opacity: 0.5; }
+  50%  { opacity: 1; }
+  100%  { opacity: 1; }
+}
