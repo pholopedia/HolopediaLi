@@ -55,4 +55,8 @@ export class HologramsListComponent implements OnInit {
     this.toggleFullscreen.emit(true);
   }
 
+  enableHover(hologram) {
+    hologram.hovered = true;
+  }
+
 }

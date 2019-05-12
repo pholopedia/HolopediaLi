@@ -3,12 +3,9 @@ export class MenuItem {
   public Link: string;
   public Settings: MenuItemSettings = new MenuItemSettings();
 
-  public Color: string;
-
-  constructor(name, link, color, settings?) {
+  constructor(name: string, link: string, settings?: { hasPreview?: boolean; isExternal?: boolean; }) {
     this.Name = name;
     this.Link = link;
-    this.Color = color;
     this.Settings.IsExternalLink = (settings && settings.isExternal)? settings.isExternal: false;
     this.Settings.HasPreview = (settings && settings.hasPreview)? settings.hasPreview: false;
   }
