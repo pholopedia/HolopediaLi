@@ -30,6 +30,7 @@ import { HologramsListComponent } from './components/elements/holograms-list/hol
 import { AddHologramComponent } from './components/elements/add-hologram/add-hologram.component';
 import { HolofactomComponent } from './components/elements/holofactom/holofactom.component';
 import { PrincessesComponent } from './components/pages/games/princesses/princesses.component';
+import { Game2048Component } from './components/pages/games/game2048/game2048.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { PrincessesComponent } from './components/pages/games/princesses/princes
     AddHologramComponent,
     HolofactomComponent,
     PrincessesComponent,
+    Game2048Component,
   ],
   imports: [
     BrowserModule,
