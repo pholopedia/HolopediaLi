@@ -46,6 +46,11 @@ text {
   font-size: 32px;
 }
 
+.widgets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .widget {
   font-size: 26px;
   text-align: center;

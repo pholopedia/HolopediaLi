@@ -58,6 +58,7 @@ h1 {
 .game-content {
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
+  margin-bottom: 100px;
 
   img {
     width: 100%;
