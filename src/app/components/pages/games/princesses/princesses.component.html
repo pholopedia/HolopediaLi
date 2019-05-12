@@ -1,16 +1,36 @@
 <h1>Holopedia Princesses</h1>
 
 <div class="game-controls">
-  <label class="start-game" (click)="startGame()">Start</label>
-  <label> Coins: {{score}}</label>
-  <label> {{result}}</label>
+  <div> Start the game and select the color either on the left or on the right.</div>
+  <div> Select the color on the right when the flickering is faster</div>
+  <div> and the color on the right when thelickering is slower.</div>
+  <div class="button start-game" (click)="startGame()">Start</div>
+  <div> Coins: {{score}}</div>
+  <!-- <app-coin 
+    [hidden]="itemHoveredName != 'Projects'" 
+    [coinObverse]="getHexSide(doctorCoin.ObverseSettings, '91%')"
+    [coinReverse]="getHexSide(doctorCoin.ReverseSettings)"
+    [subtitle]="'Quantum Foundation Quantum Qtum'" 
+    [obverseText]="doctorCoin.ObverseText">
+  </app-coin> -->
+
+
 </div>
 
 <div class="game-content">
-  <img src="assets/images/princesses/princess_left.png" alt="">
-  <div class="color" [ngClass]="{'animate_left': animateLeft, 'animate_right': animateRight}">
+  <img src="assets/images/princesses/{{levelName}}_left.png" alt="">
+  <div class="color" [ngClass]="{'princess-intuition': isPrincessLevel ,'animate_left': animateLeft, 'animate_right': animateRight}">
     <div (click)="checkAnswer('left')" class="color_left"></div>
     <div (click)="checkAnswer('right')" class="color_right"></div>
+    <div *ngIf="continueActive" class="overlay">
+      <div class="overlay-content">
+        <div class="round-result" [innerHtml]="result"></div>
+        <div *ngIf="levelText" class="round-award" [innerHtml]="levelText"></div>
+        <div class="round-award">You receive {{awardCount}} {{awards[level]}}</div>
+        <div class="round-comment">press continue and play again</div>
+        <div class="button continue-button" (click)="startGame()">Continue</div>
+      </div>
+    </div>
   </div>
-  <img src="assets/images/princesses/princess_right.png" alt="">
+  <img src="assets/images/princesses/{{levelName}}_right.png" alt="">
 </div>

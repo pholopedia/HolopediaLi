@@ -1,16 +1,57 @@
+h1 {
+  font-size: 60px;
+}
+
 .game-controls {
   margin-bottom: 30px;
   font-size: 30px;
+  text-align: center;
 
-  & > * {
-    margin-right: 20px;
+}
+
+.start-game {
+  width: 100px;
+  margin: 30px auto;
+}
+
+.button {
+  font-weight: bold;
+  background: orange;
+  padding: 3px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.continue-button {
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+.overlay-content {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  line-height: 1.5;
+
+  .round-result {
+    font-size: 40px;
   }
 
-  .start-game {
-    font-weight: bold;
-    background: orange;
-    padding: 3px 10px;
-    cursor: pointer;
+  .subtext {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .round-award {
+    font-size: 32px;
+  }
+
+  .round-comment {
+    font-size: 24px;
   }
 }
 
@@ -24,6 +65,7 @@
 
   .color {
     cursor: pointer;
+    position: relative;
 
     .color_left {
       background: red;
@@ -38,20 +80,48 @@
       height: 100%;
     }
     
+    .overlay {
+      position: absolute;
+      background: #ffffffcc;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
   }
 
-  .animate_left {
-    animation: flicker 0.085s infinite;
+  .color:not(.princess-intuition) {
+    &.animate_left {
+      animation: flicker 0.085s infinite;
+    }
+
+    &.animate_right {
+      animation: flicker 0.065s infinite;
+    }
   }
 
-  .animate_right {
-    animation: flicker 0.065s infinite;
+  .color.princess-intuition {
+
+    &.animate_left {
+      animation: subtleFlicker 0.085s infinite;
+    }
+  
+    &.animate_right {
+      animation: subtleFlicker 0.065s infinite;
+    }
   }
 }
 
 @keyframes flicker {
   0%   { opacity: 0.5; }
   49%   { opacity: 0.5; }
+  50%  { opacity: 1; }
+  100%  { opacity: 1; }
+}
+
+@keyframes subtleFlicker {
+  0%   { opacity: 0.8; }
+  49%   { opacity: 0.8; }
   50%  { opacity: 1; }
   100%  { opacity: 1; }
 }
