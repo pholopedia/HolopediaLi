@@ -14,10 +14,25 @@
 }
 
 @include bp-down(sm) {
-    .add-hologram-wrap {
-        width: 90%;
-      }
+  .add-hologram-wrap {
+    width: 90%;
+  }
 }
 
+.categories {
+  text-align: center;
+}
 
+.category {
+  width: 20%;
+  margin-right: 2%;
+  display: inline-block;
+  text-align: center;
+  font-size: 24px;
 
+  img {
+    border-radius: 6px;
+    border: 3px solid #4f0101;
+    width: 100%;
+  }
+}

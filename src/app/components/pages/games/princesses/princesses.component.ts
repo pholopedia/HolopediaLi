@@ -16,7 +16,7 @@ export class PrincessesComponent implements OnInit {
   score: number = 0;
   levelName: string;
   level: number = 0;
-  levels: string[] = ['village_girl', 'princess'];
+  levels: string[] = ['village_girl', 'maid', 'princess'];
   awards: string[] = ['village coin', 'princess coin'];
   awardCount: number;
   continueActive: boolean = false;
@@ -35,6 +35,10 @@ export class PrincessesComponent implements OnInit {
     this.continueActive = false;
   }
 
+  startTutorial() {
+
+  }
+
   checkAnswer(side: string) {
     if (!this.rolledNumber) return;
 
@@ -44,6 +48,14 @@ export class PrincessesComponent implements OnInit {
     if ((this.animateLeft && side == 'left') || (this.animateRight && side == 'right')) {
       this.result = "Correct";
       this.awardCount = 1;
+      console.log({score: this.score});
+      if (this.score == 4) {
+        this.isPrincessLevel = true;
+        this.level = this.level + 1;
+        this.result = 'Congratulations, you become a maid!'; 
+        this.levelText = 'A maid has more subtle intuition and therefore the flickering will be less noticable now.';
+        this.setLevelName();
+      }
       if (this.score == 8) {
         this.isPrincessLevel = true;
         this.level = this.level + 1;

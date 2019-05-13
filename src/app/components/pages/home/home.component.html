@@ -6,7 +6,21 @@
 <div class="add-hologram-wrap">
     <app-add-hologram></app-add-hologram>
 </div>
-<app-categories [categoriesNames]="projectsNames" [categoryType]="'project'"></app-categories>
+<!-- <app-categories [categoriesNames]="projectsNames" [categoryType]="'project'"></app-categories> -->
+<div class="categories">
+    <span class="category spa">
+        <img src="/assets/images/categories/trimmed/massage_stones.png" alt="">
+        SPA Massage
+    </span>
+    <span class="category treatments">
+        <img src="/assets/images/categories/trimmed/biofeedback.png" alt="">
+        Treatments
+    </span>
+    <span class="category knowledge">
+        <img src="/assets/images/categories/trimmed/knowledge.png" alt="">
+        Knowledge
+    </span>
+</div>
 <app-categories [categoriesNames]="sourcesNames" [categoryType]="'source'"></app-categories>
 
 <app-holograms-list></app-holograms-list>

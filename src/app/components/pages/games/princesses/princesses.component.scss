@@ -91,36 +91,59 @@ h1 {
     }
   }
 
-  .color:not(.princess-intuition) {
-    &.animate_left {
-      animation: flicker 0.085s infinite;
-    }
-
-    &.animate_right {
-      animation: flicker 0.065s infinite;
-    }
+  .village_girl-intuition {
+    animation-name: village_girl-flicker;
   }
 
-  .color.princess-intuition {
-
-    &.animate_left {
-      animation: subtleFlicker 0.085s infinite;
-    }
-  
-    &.animate_right {
-      animation: subtleFlicker 0.065s infinite;
-    }
+  .maid-intuition {
+    animation-name: maid-flicker;
   }
+
+  .princess-intuition {
+    animation-name: princess-flicker;
+  }
+
+  .animate_left {
+    animation-duration: 0.085s;
+    animation-iteration-count: infinite;
+  }
+
+  .animate_right {
+    animation-duration: 0.065s;
+    animation-iteration-count: infinite;
+  }
+
 }
 
-@keyframes flicker {
-  0%   { opacity: 0.5; }
-  49%   { opacity: 0.5; }
+@keyframes village_girl-flicker {
+  0%   { opacity: 0.2; }
+  49%   { opacity: 0.2; }
   50%  { opacity: 1; }
   100%  { opacity: 1; }
 }
 
-@keyframes subtleFlicker {
+@keyframes maid-flicker {
+  0%   { opacity: 0.4; }
+  49%   { opacity: 0.4; }
+  50%  { opacity: 1; }
+  100%  { opacity: 1; }
+}
+
+@keyframes lady-flicker {
+  0%   { opacity: 0.6; }
+  49%   { opacity: 0.6; }
+  50%  { opacity: 1; }
+  100%  { opacity: 1; }
+}
+
+@keyframes duchess-flicker {
+  0%   { opacity: 0.8; }
+  49%   { opacity: 0.8; }
+  50%  { opacity: 1; }
+  100%  { opacity: 1; }
+}
+
+@keyframes princess-flicker {
   0%   { opacity: 0.8; }
   49%   { opacity: 0.8; }
   50%  { opacity: 1; }
