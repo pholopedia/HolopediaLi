@@ -52,5 +52,10 @@
     border-radius: 20px;
     top: 0;
     left: 0;
+
+    &:hover {
+      background: #ffdddd44;
+      transition: background 0.1s linear;
+    }
   }
 }
