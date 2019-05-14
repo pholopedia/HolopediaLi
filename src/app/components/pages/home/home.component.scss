@@ -29,10 +29,28 @@
   display: inline-block;
   text-align: center;
   font-size: 24px;
+  cursor: pointer;
+
+  .image {
+    position: relative;
+    width: 100%;
+  }
 
   img {
     border-radius: 6px;
     border: 3px solid #4f0101;
     width: 100%;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 20px;
+  }
+  .shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset -10px 10px 10px -4px #eeddddcc, inset 10px -10px 10px -4px #440000cc;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
   }
 }
