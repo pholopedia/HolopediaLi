@@ -11,6 +11,7 @@ import { HologramComponent } from './components/pages/hologram/hologram.componen
 import { HolofactomComponent } from './components/elements/holofactom/holofactom.component';
 import { PrincessesComponent } from './components/pages/games/princesses/princesses.component';
 import { Game2048Component } from './components/pages/games/game2048/game2048.component';
+import { Game2048hexComponent } from './components/pages/games/game2048hex/game2048hex.component';
 
 const routes: Routes = [
   { path: 'home',  component: HomeComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'games',  component: GamesComponent },
   { path: 'games/princesses',  component: PrincessesComponent },
   { path: 'games/2048',  component: Game2048Component },
+  { path: 'games/2048_hex',  component: Game2048hexComponent },
   { path: 'hologram',  component: HologramComponent },
   { path: 'hologram/:holoid',  component: HologramComponent },
   // individual holo master coin
