@@ -32,6 +32,7 @@ import { HolofactomComponent } from './components/elements/holofactom/holofactom
 import { PrincessesComponent } from './components/pages/games/princesses/princesses.component';
 import { Game2048Component } from './components/pages/games/game2048/game2048.component';
 import { Game2048hexComponent } from './components/pages/games/game2048hex/game2048hex.component';
+import { Game3d2048Component } from './components/pages/games/game3d2048/game3d2048.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { Game2048hexComponent } from './components/pages/games/game2048hex/game2
     PrincessesComponent,
     Game2048Component,
     Game2048hexComponent,
+    Game3d2048Component,
   ],
   imports: [
     BrowserModule,
