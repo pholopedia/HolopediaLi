@@ -1,0 +1,16 @@
+{
+"companyName": "Baran Usluel",
+"productName": "2048 3D",
+"productVersion": "1.1",
+"dataUrl": "new build.data.unityweb",
+"wasmCodeUrl": "new build.wasm.code.unityweb",
+"wasmFrameworkUrl": "new build.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Light",
+"backgroundColor": "#FFFFFF",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.1.1f1"
+}
