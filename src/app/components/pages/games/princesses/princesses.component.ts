@@ -76,15 +76,4 @@ export class PrincessesComponent implements OnInit {
     this.levelName = this.levels[this.level];
   }
   
-
-  getHexSide(settings: SideSettings, size?) {
-    return {
-      'background-image': 'url(' + settings.Url + ')',
-      'background-color': settings.BackgroundColor,
-      'color': settings.TextColor,
-      'background-size': size,
-      'background-repeat': 'no-repeat',
-    }
-  }
-
 }

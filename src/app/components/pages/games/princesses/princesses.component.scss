@@ -7,6 +7,13 @@ h1 {
   font-size: 30px;
   text-align: center;
 
+  &--coins {
+    margin-top: 20px;
+  }
+
+  img {
+    vertical-align: middle;
+  }
 }
 
 .start-game {
@@ -68,17 +75,32 @@ h1 {
     cursor: pointer;
     position: relative;
 
-    .color_left {
-      background: red;
+    &>div {
       display: inline-block;
       width: 50%;
       height: 100%;
+      position: relative;
+    }
+
+    .color_left {
+      background: red;
     }
     .color_right {
       background: turquoise;
-      display: inline-block;
-      width: 50%;
-      height: 100%;
+    }
+
+    .mary::after {
+      content: "";
+      background-image: url(/assets/images/princesses/maryvag.gif);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      opacity: .02;
     }
     
     .overlay {
@@ -116,22 +138,22 @@ h1 {
 }
 
 @keyframes village_girl-flicker {
-  0%   { opacity: 0.2; }
-  49%   { opacity: 0.2; }
+  0%   { opacity: 0.5; }
+  49%   { opacity: 0.5; }
   50%  { opacity: 1; }
   100%  { opacity: 1; }
 }
 
 @keyframes maid-flicker {
-  0%   { opacity: 0.4; }
-  49%   { opacity: 0.4; }
+  0%   { opacity: 0.6; }
+  49%   { opacity: 0.6; }
   50%  { opacity: 1; }
   100%  { opacity: 1; }
 }
 
 @keyframes lady-flicker {
-  0%   { opacity: 0.6; }
-  49%   { opacity: 0.6; }
+  0%   { opacity: 0.7; }
+  49%   { opacity: 0.7; }
   50%  { opacity: 1; }
   100%  { opacity: 1; }
 }
@@ -144,8 +166,8 @@ h1 {
 }
 
 @keyframes princess-flicker {
-  0%   { opacity: 0.8; }
-  49%   { opacity: 0.8; }
+  0%   { opacity: 0.9; }
+  49%   { opacity: 0.9; }
   50%  { opacity: 1; }
   100%  { opacity: 1; }
 }

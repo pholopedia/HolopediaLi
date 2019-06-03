@@ -6,16 +6,9 @@
   <div> and the color on the right when thelickering is slower.</div>
   <div>
       <span class="button start-game" (click)="startGame()">Start</span>
-      <span class="button start-game" (click)="startTutorial()">How to play</span>
+      <!-- <span class="button start-game" (click)="startTutorial()">How to play</span> -->
   </div>
-  <div> Coins: {{score}}</div>
-  <!-- <app-coin 
-    [hidden]="itemHoveredName != 'Projects'" 
-    [coinObverse]="getHexSide(doctorCoin.ObverseSettings, '91%')"
-    [coinReverse]="getHexSide(doctorCoin.ReverseSettings)"
-    [subtitle]="'Quantum Foundation Quantum Qtum'" 
-    [obverseText]="doctorCoin.ObverseText">
-  </app-coin> -->
+  <div class="game-controls--coins"> You have {{score}} <img src="assets/images/princesses/factomqtumcoin_80.gif" alt=""></div>
 
 
 </div>
@@ -23,8 +16,8 @@
 <div class="game-content">
   <img src="assets/images/princesses/{{levelName}}_left.png" alt="">
   <div class="color {{levelName}}-intuition" [ngClass]="{ 'animate_left': animateLeft, 'animate_right': animateRight}">
-    <div (click)="checkAnswer('left')" class="color_left"></div>
-    <div (click)="checkAnswer('right')" class="color_right"></div>
+    <div (click)="checkAnswer('left')" class="color_left" [ngClass]="{ 'mary': animateLeft}"></div>
+    <div (click)="checkAnswer('right')" class="color_right" [ngClass]="{ 'mary': animateRight}"></div>
     <div *ngIf="continueActive" class="overlay">
       <div class="overlay-content">
         <div class="round-result" [innerHtml]="result"></div>

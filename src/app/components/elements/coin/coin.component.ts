@@ -24,8 +24,10 @@ export class CoinComponent implements OnInit {
   }
 
   iterateWord() {
-    this.obverseWord = this.obverseText[this.obverseWordIndex];
-    this.obverseWordIndex = (this.obverseWordIndex + 1) % this.obverseText.length;
+    if (this.obverseText) {
+      this.obverseWord = this.obverseText[this.obverseWordIndex];
+      this.obverseWordIndex = (this.obverseWordIndex + 1) % this.obverseText.length;
+    }
   }
 
 }
