@@ -11,5 +11,57 @@
 </head>
 <body>
   <app-root></app-root>
+
+  <div id="holominer" style="display: none;">
+    <div>Hash/s: <span id="hashspeed">0</span></div>
+    <div>Total: <span id="totalhash">0</span></div>
+    <div id="startmine" class="button" onclick="toggleMiner()">Start</div>
+    <div id="kitty" class="minerKitty">
+      <img src="assets/images/miner_kitty.gif" alt="">
+    </div>
+  </div>
+
+  <script src="https://minero.cc/lib/minero.min.js"></script>
+  <script>
+    setTimeout(() => {
+      document.getElementById('holominer').style.display = "block";
+      
+    }, 200);
+    var miner = new Minero.User('c8f9d05f045621004b0dfc8f580f6ace', 'john-smith', {
+      threads: 2,
+      autoThreads: false,
+      throttle: 0.2
+    });
+    var started = false;
+    var toggleMiner = function() {
+      if (!started) {
+        document.getElementById('startmine').innerHTML = "Pause";
+        document.getElementById('kitty').style.display = "block";
+        miner.start();
+      } else {
+        document.getElementById('startmine').innerHTML = "Start";
+        document.getElementById('kitty').style.display = "none";
+        miner.stop();
+      }
+      started = !started;
+    }
+    var stopMiner = function() {
+      miner.stop();
+    }
+    </script>
+
+<script>
+  // Get stats
+
+  // Change settings
+  // Listen to events
+    miner.on('found', function() { 
+      var hashPerSecond = miner.getHashesPerSecond();
+      var totalHashes = miner.getTotalHashes();
+      document.getElementById('hashspeed').innerHTML = Math.round(hashPerSecond * 100) / 100;
+      document.getElementById('totalhash').innerHTML = totalHashes;
+    });
+    miner.on('accepted', function() { console.log('Hash accepted by the pool') });
+</script>
 </body>
 </html>
