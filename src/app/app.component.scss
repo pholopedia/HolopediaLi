@@ -2,3 +2,42 @@
   margin: 10px;
   min-height: 700px;
 }
+
+
+
+#holominer {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  background: #ffe5b4;
+  border-radius: 6px;
+  border: 1px solid #540101;
+  color: #540101;
+  width: 128px;
+  height: 64px;
+  line-height: 1.2;
+  padding: 10px;
+  z-index: 100;
+}
+
+.button {
+  font-weight: bold;
+  background: orange;
+  padding: 3px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.minerKitty {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 55px;
+  display: none;
+
+  img {
+    width: 100%;
+  }
+}

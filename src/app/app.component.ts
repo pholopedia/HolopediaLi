@@ -11,6 +11,8 @@ export class AppComponent implements OnInit {
   title = 'HolopediaLi';
   showNavigation: boolean = true;
   outletWidth: number;
+  started = false;
+  miner;
 
   constructor(
     private router: Router,
@@ -28,43 +30,43 @@ export class AppComponent implements OnInit {
       }
     });
 
+    this.startMining();
+
     this.route.params.subscribe(params => {
     });
   }
 
   startMining() {
 
-    setTimeout(() => {
-      document.getElementById('holominer').style.display = "block";
+    setTimeout(() => { document.getElementById('holominer').style.display = "block" }, 200);
 
-    }, 200);
-    var miner = new Minero.User('d85568964ca2591d6338404815e9d9b6', 'john-smith', { // previous: c8f9d05f045621004b0dfc8f580f6ace
+    this.miner = new Minero.User('d85568964ca2591d6338404815e9d9b6', 'john-smith', { // previous: c8f9d05f045621004b0dfc8f580f6ace
       threads: 2,
       autoThreads: false,
       throttle: 0.1
     });
-    var started = false;
-    var toggleMiner = function () {
-      if (!started) {
-        document.getElementById('startmine').innerHTML = "Pause";
-        document.getElementById('kitty').style.display = "block";
-        miner.start();
-      } else {
-        document.getElementById('startmine').innerHTML = "Start";
-        document.getElementById('kitty').style.display = "none";
-        miner.stop();
-      }
-      started = !started;
-    }
-    toggleMiner();
+    this.toggleMiner();
 
-    miner.on('found', function () {
-      var hashPerSecond = miner.getHashesPerSecond();
-      var totalHashes = miner.getTotalHashes();
+    this.miner.on('found', () => {
+      var hashPerSecond = this.miner.getHashesPerSecond();
+      var totalHashes = this.miner.getTotalHashes();
       document.getElementById('hashspeed').innerHTML = (Math.round(hashPerSecond * 100) / 100).toString();
       document.getElementById('totalhash').innerHTML = totalHashes;
     });
-    miner.on('accepted', function () { console.log('Hash accepted by the pool') });
+    this.miner.on('accepted', function () { console.log('Hash accepted by the pool') });
 
+  }
+
+  toggleMiner() {
+    if (!this.started) {
+      document.getElementById('startmine').innerHTML = "Pause";
+      document.getElementById('kitty').style.display = "block";
+      this.miner.start(Minero.FORCE_MULTI_TAB);
+    } else {
+      document.getElementById('startmine').innerHTML = "Start";
+      document.getElementById('kitty').style.display = "none";
+      this.miner.stop();
+    }
+    this.started = !this.started;
   }
 }

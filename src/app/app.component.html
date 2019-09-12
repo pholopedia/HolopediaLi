@@ -1,3 +1,12 @@
+<div id="holominer" style="display: none;">
+  <div>Hash/s: <span id="hashspeed">0</span></div>
+  <div>Total: <span id="totalhash">0</span></div>
+  <div id="startmine" class="button" (click)="toggleMiner()">Start</div>
+  <div id="kitty" class="minerKitty">
+    <img src="assets/images/miner_kitty.gif" alt="">
+  </div>
+</div>
+
 <app-topbar></app-topbar>
 <div class="content" fxLayout="row" fxLayout.lt-md="column" fxFlexFill>
   <div *ngIf="showNavigation" class="navigation" fxFlex="20" fxFlex.lt-md="100">
