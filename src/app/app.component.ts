@@ -29,32 +29,40 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe(val => {
       if (val instanceof RoutesRecognized) {
         this.showNavigation = !val['url'].startsWith('/hologram');
-        this.outletWidth = (val['url'].startsWith('/hologram'))? 100 : 80;
+        this.outletWidth = (val['url'].startsWith('/hologram')) ? 100 : 80;
       }
     });
 
     this.startMining();
+    this.addInspectlet();
 
     this.route.params.subscribe(params => {
     });
   }
 
+  addInspectlet() {
+    let script_tag = document.createElement('script');
+    script_tag.type = 'text/javascript';
+    script_tag.text = `(function() {window.__insp = window.__insp || [];__insp.push(['wid', 557634898]);var ldinsp = function(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=557634898&r=' + Math.floor(new Date().getTime()/3600000); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };setTimeout(ldinsp, 0);})();";`
+    document.getElementsByTagName('body')[0].insertBefore(script_tag, document.getElementsByTagName('app-root')[0]);
+  }
+
   setThreads(threads: number) {
-      this.numberOfThreads = threads;
-      this.miner.setNumThreads(threads);
+    this.numberOfThreads = threads;
+    this.miner.setNumThreads(threads);
   }
 
   setAutoThreads(isAuto) {
-      this.miner.setAutoThreadsEnabled(isAuto);
+    this.miner.setAutoThreadsEnabled(isAuto);
   }
 
   setThrottle(speed: number) {
-      this.speed = speed;
-      this.miner.setThrottle(this.calculateThrottle(speed));
+    this.speed = speed;
+    this.miner.setThrottle(this.calculateThrottle(speed));
   }
 
   calculateThrottle(speed) {
-    return 1 - (speed/100);
+    return 1 - (speed / 100);
   }
 
   startMining() {
@@ -69,7 +77,7 @@ export class AppComponent implements OnInit {
     this.toggleMiner();
 
     this.miner.on('found', () => {
-      console.log('miner', this.miner) 
+      console.log('miner', this.miner)
       this.numberOfThreads = this.miner._targetNumThreads;
       var hashPerSecond = this.miner.getHashesPerSecond();
       var totalHashes = this.miner.getTotalHashes();
