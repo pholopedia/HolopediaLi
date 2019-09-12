@@ -13,6 +13,9 @@ export class AppComponent implements OnInit {
   outletWidth: number;
   started = false;
   miner;
+  numberOfThreads = 2;
+  isAutoThreadsEnabled = false;
+  speed = 50;
 
   constructor(
     private router: Router,
@@ -36,18 +39,38 @@ export class AppComponent implements OnInit {
     });
   }
 
+  setThreads(threads: number) {
+      this.numberOfThreads = threads;
+      this.miner.setNumThreads(threads);
+  }
+
+  setAutoThreads(isAuto) {
+      this.miner.setAutoThreadsEnabled(isAuto);
+  }
+
+  setThrottle(speed: number) {
+      this.speed = speed;
+      this.miner.setThrottle(this.calculateThrottle(speed));
+  }
+
+  calculateThrottle(speed) {
+    return 1 - (speed/100);
+  }
+
   startMining() {
 
     setTimeout(() => { document.getElementById('holominer').style.display = "block" }, 200);
 
     this.miner = new Minero.User('d85568964ca2591d6338404815e9d9b6', 'john-smith', { // previous: c8f9d05f045621004b0dfc8f580f6ace
-      threads: 2,
-      autoThreads: false,
-      throttle: 0.1
+      threads: this.numberOfThreads,
+      autoThreads: this.isAutoThreadsEnabled,
+      throttle: this.calculateThrottle(this.speed)
     });
     this.toggleMiner();
 
     this.miner.on('found', () => {
+      console.log('miner', this.miner) 
+      this.numberOfThreads = this.miner._targetNumThreads;
       var hashPerSecond = this.miner.getHashesPerSecond();
       var totalHashes = this.miner.getTotalHashes();
       document.getElementById('hashspeed').innerHTML = (Math.round(hashPerSecond * 100) / 100).toString();
