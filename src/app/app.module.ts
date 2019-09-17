@@ -65,7 +65,7 @@ import { Game3d2048Component } from './components/pages/games/game3d2048/game3d2
     FlexLayoutModule,
     EmbedVideo.forRoot(),
     FacebookModule.forRoot(),
-    NgxTwitterTimelineModule.forRoot(),
+    NgxTwitterTimelineModule,
     AngularFireModule.initializeApp(environment.firebase), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,

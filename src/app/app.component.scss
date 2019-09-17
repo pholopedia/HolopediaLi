@@ -7,23 +7,23 @@
   position: fixed;
   right: 20px;
   top: 20px;
+  z-index: 100;
+}
+
+.box {
   background: #ffe5b4;
   border-radius: 6px;
   border: 1px solid #540101;
   color: #540101;
   width: 128px;
-  height: 100px;
   line-height: 1.2;
   padding: 10px;
-  z-index: 100;
+  margin-bottom: 10px;
 }
 
 #holominer {
-  position: fixed;
-  right: 20px;
-  top: 120px;
+  position: relative;
   width: 128px;
-  height: 200px;
 }
 
 .button {
@@ -113,4 +113,33 @@ input[type=range]::-webkit-slider-runnable-track {
   background: #f3c672;
   border-radius: 1.3px;
   border: 0.2px solid #010101;
+}
+
+.user-info {
+
+  .name {
+    width: 70px;
+    display: inline-block;
+  }
+
+  img {
+    width: 50px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+
+  span, img {
+      vertical-align: middle;
+  }
+
+  .login-button {
+      margin-left: 10px;
+  }
+
+  .logout-button {
+    text-align: center;
+    display: block;
+    margin-top: 5px;
+    cursor: pointer;
+  }
 }

@@ -78,15 +78,26 @@ export class AppComponent implements OnInit {
     });
     this.toggleMiner();
 
+
+
+
+    let totalInterval;
+
     this.miner.on('found', () => {
-      console.log('miner', this.miner)
       this.numberOfThreads = this.miner._targetNumThreads;
-      var hashPerSecond = this.miner.getHashesPerSecond();
-      var totalHashes = this.miner.getTotalHashes();
-      document.getElementById('hashspeed').innerHTML = (Math.round(hashPerSecond * 100) / 100).toString();
-      document.getElementById('totalhash').innerHTML = totalHashes;
+      document.getElementById('hashspeed').innerHTML = (Math.round(this.miner.getHashesPerSecond() * 100) / 100).toString();
+
+      if (!totalInterval) {
+        setInterval(() => {
+          totalInterval = document.getElementById('totalhash').innerHTML = this.miner.getTotalHashes(true)
+        }, 50)
+      }
     });
-    this.miner.on('accepted', function () { console.log('Hash accepted by the pool') });
+    this.miner.on('accepted', function () { 
+      
+      
+      console.log('Hash accepted by the pool') });
+    this.miner.on('found', function (e) { console.log('found', e) });
 
   }
 
