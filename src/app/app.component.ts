@@ -101,8 +101,10 @@ export class AppComponent implements OnInit {
       }
     });
     this.miner.on('accepted', () => { 
+      const acceptedHashes = this.miner.getTotalHashes();
+      console.log('accepted hashes this session', acceptedHashes)
       if (this.loggedUser) {
-        this.loggedUser.hashCount = this.startHashCount + this.miner.getTotalHashes();
+        this.loggedUser.hashCount = this.startHashCount + acceptedHashes;
         this.afs.doc(`users/${this.loggedUser.uid}`).set(this.loggedUser);
       }
     });
