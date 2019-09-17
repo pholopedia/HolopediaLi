@@ -8,13 +8,14 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-interface User {
+export interface User {
     uid: string;
     email: string;
     roles: Roles;
     photoURL?: string;
     displayName?: string;
     favoriteColor?: string;
+    hashCount?: number;
 }
 
 interface Roles {

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
-import { AuthService } from './services/auth/auth.service';
+import { AuthService, User } from './services/auth/auth.service';
+import { ItemsService } from './services/firestore/item.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 declare let Minero: any;
 
 @Component({
@@ -17,13 +19,16 @@ export class AppComponent implements OnInit {
   numberOfThreads = 2;
   isAutoThreadsEnabled = false;
   speed = 50;
+  loggedUser: User;
+  startHashCount;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
+    private afs: AngularFirestore,
     public auth: AuthService,
+    private itemsService: ItemsService,
   ) {
-
   }
 
   ngOnInit() {
@@ -33,6 +38,11 @@ export class AppComponent implements OnInit {
         this.showNavigation = !val['url'].startsWith('/hologram');
         this.outletWidth = (val['url'].startsWith('/hologram')) ? 100 : 80;
       }
+    });
+
+    this.auth.user.subscribe(user => {
+      this.loggedUser = user;
+      if (!this.startHashCount) this.startHashCount = user.hashCount || 0;
     });
 
     this.startMining();
@@ -78,9 +88,6 @@ export class AppComponent implements OnInit {
     });
     this.toggleMiner();
 
-
-
-
     let totalInterval;
 
     this.miner.on('found', () => {
@@ -93,12 +100,13 @@ export class AppComponent implements OnInit {
         }, 50)
       }
     });
-    this.miner.on('accepted', function () { 
-      
-      
-      console.log('Hash accepted by the pool') });
-    this.miner.on('found', function (e) { console.log('found', e) });
-
+    this.miner.on('accepted', () => { 
+      if (this.loggedUser) {
+        this.loggedUser.hashCount = this.startHashCount + this.miner.getTotalHashes();
+        this.afs.doc(`users/${this.loggedUser.uid}`).set(this.loggedUser);
+      }
+    });
+    // this.miner.on('found', function (e) { console.log('found', e) });
   }
 
   toggleMiner() {
