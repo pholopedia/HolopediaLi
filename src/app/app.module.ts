@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule, CoreModule } from "@angular/flex-layout";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
@@ -22,7 +22,8 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { SafePipe } from './pipes/safe.pipe';
 import { HologramComponent } from './components/pages/hologram/hologram.component';
 import { CategoriesComponent } from './components/elements/categories/categories.component';
@@ -64,13 +65,14 @@ import { Game3d2048Component } from './components/pages/games/game3d2048/game3d2
     FlexLayoutModule,
     EmbedVideo.forRoot(),
     FacebookModule.forRoot(),
-    NgxTwitterTimelineModule.forRoot(),
+    NgxTwitterTimelineModule,
     AngularFireModule.initializeApp(environment.firebase), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule // imports firebase/storage only needed for storage features
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    CoreModule,
   ],
-  providers: [],
+  providers: [AngularFireAuth, AngularFireAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

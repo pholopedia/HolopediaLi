@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
+import { AuthService, User } from './services/auth/auth.service';
+import { ItemsService } from './services/firestore/item.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 declare let Minero: any;
 
 @Component({
@@ -16,12 +19,16 @@ export class AppComponent implements OnInit {
   numberOfThreads = 2;
   isAutoThreadsEnabled = false;
   speed = 50;
+  loggedUser: User;
+  startHashCount;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
+    private afs: AngularFirestore,
+    public auth: AuthService,
+    private itemsService: ItemsService,
   ) {
-
   }
 
   ngOnInit() {
@@ -31,6 +38,11 @@ export class AppComponent implements OnInit {
         this.showNavigation = !val['url'].startsWith('/hologram');
         this.outletWidth = (val['url'].startsWith('/hologram')) ? 100 : 80;
       }
+    });
+
+    this.auth.user.subscribe(user => {
+      this.loggedUser = user;
+      if (!this.startHashCount) this.startHashCount = user.hashCount || 0;
     });
 
     this.startMining();
@@ -76,16 +88,27 @@ export class AppComponent implements OnInit {
     });
     this.toggleMiner();
 
-    this.miner.on('found', () => {
-      console.log('miner', this.miner)
-      this.numberOfThreads = this.miner._targetNumThreads;
-      var hashPerSecond = this.miner.getHashesPerSecond();
-      var totalHashes = this.miner.getTotalHashes();
-      document.getElementById('hashspeed').innerHTML = (Math.round(hashPerSecond * 100) / 100).toString();
-      document.getElementById('totalhash').innerHTML = totalHashes;
-    });
-    this.miner.on('accepted', function () { console.log('Hash accepted by the pool') });
+    let totalInterval;
 
+    this.miner.on('found', () => {
+      this.numberOfThreads = this.miner._targetNumThreads;
+      document.getElementById('hashspeed').innerHTML = (Math.round(this.miner.getHashesPerSecond() * 100) / 100).toString();
+
+      if (!totalInterval) {
+        setInterval(() => {
+          totalInterval = document.getElementById('totalhash').innerHTML = this.miner.getTotalHashes(true)
+        }, 50)
+      }
+    });
+    this.miner.on('accepted', () => { 
+      const acceptedHashes = this.miner.getTotalHashes();
+      console.log('accepted hashes this session', acceptedHashes)
+      if (this.loggedUser) {
+        this.loggedUser.hashCount = this.startHashCount + acceptedHashes;
+        this.afs.doc(`users/${this.loggedUser.uid}`).set(this.loggedUser);
+      }
+    });
+    // this.miner.on('found', function (e) { console.log('found', e) });
   }
 
   toggleMiner() {

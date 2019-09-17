@@ -1,27 +1,60 @@
-<div id="holominer" style="display: none;">
-  <div>Hash/s: <span id="hashspeed">0</span></div>
-  <div>Total: <span id="totalhash">0</span></div>
-  <div id="kitty" class="minerKitty">
-    <img src="assets/images/miner_kitty.gif" alt="">
+<div class="float-box">
+  <div class="box">
+
+    <div *ngIf="auth.user | async; then authenticated else guest">
+      <!-- template will replace this div -->
+    </div>
+
+    <!-- User NOT logged in -->
+    <ng-template #guest>
+      <div class="user-info">
+        <span>Hello guest</span>
+        <button class="login-button" (click)="auth.googleLogin()">
+          <i class="fa fa-google"></i> Connect Google
+        </button>
+
+      </div>
+    </ng-template>
+
+
+    <!-- User logged in -->
+    <ng-template #authenticated>
+      <div class="user-info">
+        <div *ngIf="auth.user | async as user">
+          <span class="name">Hello {{ user.displayName }}</span>
+          <img [src]="user.photoURL">
+          <span class="logout-button" >Coins: {{ user.hashCount }}</span>
+          <span class="logout-button" (click)="auth.signOut()">Logout</span>
+        </div>
+      </div>
+    </ng-template>
   </div>
 
-  <input class="auto-threads" type="checkbox" (change)="setAutoThreads($event.target.checked)" [(ngModel)]="isAutoThreadsEnabled">Auto threads
-  
-  <div class="slider">
-    <input type="range" id="start" name="volume" [(ngModel)]="numberOfThreads"
-           min="1" max="16" value="2" step="1" [disabled]="isAutoThreadsEnabled"
-           (change)="setThreads($event.target.value)">
-    <label for="volume">Threads: {{numberOfThreads}}</label>
-  </div>
-  
-  <div class="slider">
-    <input type="range" id="cowbell" name="cowbell" [(ngModel)]="speed"
-           min="1" max="100" value="0.5" step="1"
-           (change)="setThrottle($event.target.value)">
-    <label for="cowbell">Speed: {{speed}}%</label>
-  </div>
 
-  <div id="startmine" class="button startmine" (click)="toggleMiner()">Start</div>
+  <div id="holominer" class="box" style="display: none;">
+    <div>Hash/s: <span id="hashspeed">0</span></div>
+    <div>Total: <span id="totalhash">0</span></div>
+    <div id="kitty" class="minerKitty">
+      <img src="assets/images/miner_kitty.gif" alt="">
+    </div>
+
+    <input class="auto-threads" type="checkbox" (change)="setAutoThreads($event.target.checked)"
+      [(ngModel)]="isAutoThreadsEnabled">Auto threads
+
+    <div class="slider">
+      <input type="range" id="start" name="volume" [(ngModel)]="numberOfThreads" min="1" max="16" value="2" step="1"
+        [disabled]="isAutoThreadsEnabled" (change)="setThreads($event.target.value)">
+      <label for="volume">Threads: {{numberOfThreads}}</label>
+    </div>
+
+    <div class="slider">
+      <input type="range" id="cowbell" name="cowbell" [(ngModel)]="speed" min="1" max="100" value="0.5" step="1"
+        (change)="setThrottle($event.target.value)">
+      <label for="cowbell">Speed: {{speed}}%</label>
+    </div>
+
+    <div id="startmine" class="button startmine" (click)="toggleMiner()">Start</div>
+  </div>
 </div>
 
 <app-topbar></app-topbar>
