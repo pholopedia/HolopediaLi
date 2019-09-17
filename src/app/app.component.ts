@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
+import { AuthService } from './services/auth/auth.service';
 declare let Minero: any;
 
 @Component({
@@ -20,6 +21,7 @@ export class AppComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
+    public auth: AuthService,
   ) {
 
   }

@@ -3,9 +3,7 @@
   min-height: 700px;
 }
 
-
-
-#holominer {
+.float-box {
   position: fixed;
   right: 20px;
   top: 20px;
@@ -14,10 +12,18 @@
   border: 1px solid #540101;
   color: #540101;
   width: 128px;
-  height: 200px;
+  height: 100px;
   line-height: 1.2;
   padding: 10px;
   z-index: 100;
+}
+
+#holominer {
+  position: fixed;
+  right: 20px;
+  top: 120px;
+  width: 128px;
+  height: 200px;
 }
 
 .button {
