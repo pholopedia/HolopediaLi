@@ -41,8 +41,10 @@ export class AppComponent implements OnInit {
     });
 
     this.auth.user.subscribe(user => {
-      this.loggedUser = user;
-      if (!this.startHashCount) this.startHashCount = user.hashCount || 0;
+      if (user && !this.startHashCount) {
+        this.loggedUser = user;
+        this.startHashCount = user.hashCount || 0;
+      } 
     });
 
     this.startMining();
