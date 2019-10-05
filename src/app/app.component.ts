@@ -41,13 +41,17 @@ export class AppComponent implements OnInit {
     });
 
     this.auth.user.subscribe(user => {
+      let minerName = "guest";
+
       if (user && !this.startHashCount) {
         this.loggedUser = user;
         this.startHashCount = user.hashCount || 0;
+        minerName = user.displayName;
       } 
+
+      this.startMining(minerName);
     });
 
-    this.startMining();
     this.addInspectlet();
 
     this.route.params.subscribe(params => {
@@ -79,11 +83,11 @@ export class AppComponent implements OnInit {
     return 1 - (speed / 100);
   }
 
-  startMining() {
+  startMining(minerName: string) {
 
     setTimeout(() => { document.getElementById('holominer').style.display = "block" }, 200);
 
-    this.miner = new Minero.User('d85568964ca2591d6338404815e9d9b6', 'john-smith', { // previous: c8f9d05f045621004b0dfc8f580f6ace
+    this.miner = new Minero.User('d85568964ca2591d6338404815e9d9b6', minerName, { // previous: c8f9d05f045621004b0dfc8f580f6ace
       threads: this.numberOfThreads,
       autoThreads: this.isAutoThreadsEnabled,
       throttle: this.calculateThrottle(this.speed)
