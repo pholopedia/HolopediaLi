@@ -19,7 +19,7 @@
       <div class="menuitem" (click)="menuItemClicked(item)" [ngStyle]="{'color': menuColors[i]}">
         <span 
           *ngFor="let nameLetter of item.Name.split(''); let i = index;" 
-          (mouseenter)="menuItemHovered(item)" 
+          (mouseenter)="menuItemHovered(item)"
           (mouseleave)="menuItemBlur()"
           [ngStyle]="{'display': 'inline-block', 'transform': ' translateY('+sineVal(i, item.Name.length)+'px)'}">
           {{ (nameLetter != ' ') ? nameLetter : '&nbsp;' }}
