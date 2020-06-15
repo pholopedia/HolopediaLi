@@ -13,11 +13,12 @@ import { PrincessesComponent } from './components/pages/games/princesses/princes
 import { Game2048Component } from './components/pages/games/game2048/game2048.component';
 import { Game2048hexComponent } from './components/pages/games/game2048hex/game2048hex.component';
 import { Game3d2048Component } from './components/pages/games/game3d2048/game3d2048.component';
+import { SocialComponent } from './components/pages/social/social.component';
 
 const routes: Routes = [
   { path: 'home',  component: HomeComponent },
   { path: 'contact',  component: ContactComponent },
-  // { path: 'social',  component: SocialComponent },
+  { path: 'social',  component: SocialComponent },
   { path: 'projects/holofactom',  component: HolofactomComponent },
   { path: 'projects',  component: ProjectsComponent },
   { path: 'projects/:project',  component: ProjectsComponent },

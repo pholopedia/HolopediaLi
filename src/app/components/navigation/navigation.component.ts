@@ -13,8 +13,8 @@ export class NavigationComponent implements OnInit {
 
   menuItems: MenuItem[] = [
     new MenuItem("Holopedia Club", "/home", { hasPreview: true }),
-    new MenuItem("CET Healy", "https://cetdata.wordpress.com/", { isExternal: true }),
-    new MenuItem("Centrum Healy", "http://biofeedback.malopolska.pl/", { isExternal: true, hasPreview: true }),
+    new MenuItem("Timewaver Club", "https://cetdata.wordpress.com/", { isExternal: true }),
+    new MenuItem("Healy Club", "http://biofeedback.malopolska.pl/", { isExternal: true, hasPreview: true }),
     new MenuItem("Contact", "/contact"),
     new MenuItem("Social", "/social"),
     new MenuItem("Projects", "/projects", { hasPreview: true }),

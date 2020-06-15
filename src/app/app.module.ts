@@ -8,11 +8,11 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { CoinComponent } from './components/elements/coin/coin.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
-// import { SocialComponent } from './components/pages/social/social.component';
+import { SocialComponent } from './components/pages/social/social.component';
 import { ProjectsComponent } from './components/pages/projects/projects.component';
 import { GamesComponent } from './components/pages/games/games.component';
-// import { FacebookModule } from 'ngx-facebook';
-// import { NgxTwitterTimelineModule } from 'ngx-twitter-timeline';
+import { FacebookModule } from 'ngx-facebook';
+import { NgxTwitterTimelineModule } from 'ngx-twitter-timeline';
 // import { EmbedVideo } from 'ngx-embed-video/dist';
 import { ProjectStarComponent } from './components/elements/project-star/project-star.component';
 import { environment } from '../environments/environment';
@@ -43,7 +43,7 @@ import { Game3d2048Component } from './components/pages/games/game3d2048/game3d2
     CoinComponent,
     HomeComponent,
     ContactComponent,
-    // SocialComponent,
+    SocialComponent,
     ProjectsComponent,
     GamesComponent,
     ProjectStarComponent,
@@ -64,8 +64,8 @@ import { Game3d2048Component } from './components/pages/games/game3d2048/game3d2
     AppRoutingModule,
     FlexLayoutModule,
     // EmbedVideo.forRoot(),
-    // FacebookModule.forRoot(),
-    // NgxTwitterTimelineModule,
+    FacebookModule.forRoot(),
+    NgxTwitterTimelineModule,
     AngularFireModule.initializeApp(environment.firebase), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
