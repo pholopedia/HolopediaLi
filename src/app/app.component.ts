@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
         minerName = user.displayName;
       } 
 
-      this.startMining(minerName);
+      // this.startMining(minerName);
     });
 
     this.addInspectlet();
