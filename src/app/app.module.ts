@@ -34,6 +34,7 @@ import { PrincessesComponent } from './components/pages/games/princesses/princes
 import { Game2048Component } from './components/pages/games/game2048/game2048.component';
 import { Game2048hexComponent } from './components/pages/games/game2048hex/game2048hex.component';
 import { Game3d2048Component } from './components/pages/games/game3d2048/game3d2048.component';
+import { HolopediaTokenComponent } from './components/holopedia_token/holopedia_token.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { Game3d2048Component } from './components/pages/games/game3d2048/game3d2
     Game2048Component,
     Game2048hexComponent,
     Game3d2048Component,
+    HolopediaTokenComponent,
   ],
   imports: [
     BrowserModule,

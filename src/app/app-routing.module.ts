@@ -14,8 +14,10 @@ import { Game2048Component } from './components/pages/games/game2048/game2048.co
 import { Game2048hexComponent } from './components/pages/games/game2048hex/game2048hex.component';
 import { Game3d2048Component } from './components/pages/games/game3d2048/game3d2048.component';
 import { SocialComponent } from './components/pages/social/social.component';
+import { HolopediaTokenComponent } from './components/holopedia_token/holopedia_token.component';
 
 const routes: Routes = [
+  { path: 'holopedia_token',  component: HolopediaTokenComponent },
   { path: 'home',  component: HomeComponent },
   { path: 'contact',  component: ContactComponent },
   { path: 'social',  component: SocialComponent },

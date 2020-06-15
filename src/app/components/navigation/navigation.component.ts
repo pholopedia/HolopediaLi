@@ -12,13 +12,14 @@ export class NavigationComponent implements OnInit {
 
 
   menuItems: MenuItem[] = [
+    new MenuItem("Holopedia Token", "/holopedia_token", { hasPreview: true }),
     new MenuItem("Holopedia Club", "/home", { hasPreview: true }),
     new MenuItem("Timewaver Club", "https://cetdata.wordpress.com/", { isExternal: true }),
     new MenuItem("Healy Club", "http://biofeedback.malopolska.pl/", { isExternal: true, hasPreview: true }),
     new MenuItem("Contact", "/contact"),
     new MenuItem("Social", "/social"),
     new MenuItem("Projects", "/projects", { hasPreview: true }),
-    new MenuItem("Quantum Foundation Portals", "https://quantumfoundation.github.io/", { isExternal: true }),
+    // new MenuItem("Quantum Foundation Portals", "https://quantumfoundation.github.io/", { isExternal: true }),
   ]
 
   menuColors = ["#b9d4ec", "#ffe2b9", "#f1c5f3", "#caecf7", "#bff5af", "#ece6ac", "#fa96ab"];
