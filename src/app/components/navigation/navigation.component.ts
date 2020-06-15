@@ -34,7 +34,8 @@ export class NavigationComponent implements OnInit {
 
   sample = "questions"
   Math: any = Math;
-  doctorCoin: CoinSettings = new CoinSettings(["Holo Doctor"], { theme: "purple" }, [], { url: "http://quantumfoundation.eu/wp-content/uploads/2018/08/eth_back.png" });
+  tokenCoin: CoinSettings = new CoinSettings([], { url: "http://quantumholopedia.eu/wp-content/uploads/2020/06/HP_Holopedia_x4_best.png" }, [], { url: "http://quantumholopedia.eu/wp-content/uploads/2020/06/HP_Holopedia_x4_best.png" });
+  doctorCoin: CoinSettings = new CoinSettings(["Holo Doctor"], { theme: "purple" }, [], { url: "http://quantumholopedia.eu/wp-content/uploads/2020/05/eth_double_flipped.png" });
   qfCoin: CoinSettings = new CoinSettings("", { url:"https://quantumfunds.files.wordpress.com/2018/11/12star8frameqf.png", theme: "purple" }, [], { url: "http://quantumfoundation.eu/wp-content/uploads/2018/08/eth_back.png" });
   itemHoveredName: string;
   itemPreviewName: string;
