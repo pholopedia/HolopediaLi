@@ -1,0 +1,29 @@
+.header {
+  display: grid;
+  grid-template-columns: 20% auto 20%;
+
+  img {
+    width: 60%;
+    margin: auto;
+  }
+}
+
+.content {
+  width: 60%;
+  margin: auto;
+  text-align: justify;
+
+  .team {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+       
+    img {
+      width: 100%;
+    }
+    
+    .linkedin img {
+      width: 30px;
+    }
+  }
+}

@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'hologram/:holoid',  component: HologramComponent },
   // individual holo master coin
   // Default
-  { path: '', component: HomeComponent }
+  { path: '', component: HolopediaTokenComponent }
 ];
 
 @NgModule({

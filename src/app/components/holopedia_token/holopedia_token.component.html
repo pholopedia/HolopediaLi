@@ -1,1 +1,35 @@
-<p>holopedia-token works!</p>
+<div class="header">
+  <img src="assets/images/coin/HP_Holopedia.png" alt="holopedia token">
+  <div class="title">
+    <h1>Holopedia Token</h1>
+    <h2>HPA</h2>
+  </div>
+  <img src="assets/images/coin/HP_Holopedia.png" alt="holopedia token">
+</div>
+
+<div class="content">
+
+  <h2>Holopedia Token ~ Introduction</h2>
+  <div class="intro">
+    Holopedia Token has been created to serve as a payment method for holographic content that is shared among Holopedia
+    platform users. Holopedia will incentivize users to upload holographic data of different kind by rewarding them
+    Holopedia Tokens.<br><br>
+
+    Holopedia Token is an ERC20 token using pragma version 0.6.0, created via vittominacori's
+    <a href="https://vittominacori.github.io/erc20-generator/" target="_blank">erc20-generator</a> and operating on
+    Ethereum's Mainnet.
+  </div>
+
+  <h2>Holopedia Team</h2>
+  <div class="team">
+    <div class="member" *ngFor="let member of team.members">
+      <img src="assets/images/team/{{member.imageFileName}}" [alt]="member.name">
+      <span>{{member.name}}, {{member.title}}</span>
+      <div class="linkedin">
+        <a href="https://www.linkedin.com/in/{{member.linkedInUrl}}/" target="_blank">
+          <img src="assets/images/linkedin_icon.png" alt="Linkedin icon">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
