@@ -12,18 +12,18 @@
 }
 
 .scene {
-      // transform: rotateX(-90deg) rotateZ(90deg); 
+      transform: rotateX(-90deg) rotateZ(90deg); 
 }
 
 .cylinder-2 {
-  //  animation:spin 6s linear infinite;
+   animation:spin 6s linear infinite;
    cursor: pointer;
 }
 
 .cylinder-2:hover {
    animation:spin 0s linear;
    transition: transform 1s;
-  //  transform: rotate(-90deg); 
+   transform: rotate(-90deg); 
 }
 
 #tridiv {
