@@ -67,9 +67,10 @@ export class ProjectStarComponent implements OnInit {
       this.title = this.currentStep;
       this.description = (this.currentStep == "HolopediaLi")? this.defaultDescription: "";
     });
+    this.starBgUrl = `/assets/images/coin/12star_hp.png`;
 
     
-    setInterval(x => this.iterateStarBg(), 810);
+    // setInterval(x => this.iterateStarBg(), 810);
   }
 
   iterateStarBg() {
