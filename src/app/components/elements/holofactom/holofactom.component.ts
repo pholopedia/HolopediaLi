@@ -105,7 +105,7 @@ export class HolofactomComponent implements OnInit {
   }
 
   selectProject(project) {
-    if (project.name != "Put in Your Hologram for Holopedia Li") {
+    if (project.name != "Put in Your Hologram for Holopedia HPA") {
       this.router.navigate(['/hologram'], { queryParams: {'project': project.name} });
     } else {
       this.router.navigate(['/hologram']);
