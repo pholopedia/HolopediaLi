@@ -10,6 +10,7 @@ import { Lightbox } from 'ngx-lightbox';
 export class HolopediaTokenComponent implements OnInit {
 
   team: Team = new Team();
+  coinImageUrl = "assets/images/coin/HP_Holopedia.png";
 
   constructor(
     private lightbox: Lightbox
