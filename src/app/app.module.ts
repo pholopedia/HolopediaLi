@@ -35,7 +35,7 @@ import { Game2048Component } from './components/pages/games/game2048/game2048.co
 import { Game2048hexComponent } from './components/pages/games/game2048hex/game2048hex.component';
 import { Game3d2048Component } from './components/pages/games/game3d2048/game3d2048.component';
 import { HolopediaTokenComponent } from './components/holopedia_token/holopedia_token.component';
-
+import { LightboxModule } from 'ngx-lightbox';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +73,7 @@ import { HolopediaTokenComponent } from './components/holopedia_token/holopedia_
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     // CoreModule,
+    LightboxModule,
   ],
   providers: [AngularFireAuth, AngularFireAuthGuard],
   bootstrap: [AppComponent]

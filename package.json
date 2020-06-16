@@ -28,6 +28,7 @@
     "ng-click-outside": "^4.0.0",
     "ngx-color-picker": "^8.0.1",
     "ngx-facebook": "^3.0.0-0",
+    "ngx-lightbox": "^2.1.2",
     "ngx-twitter-timeline": "^0.1.5",
     "rxjs": "~6.5.3",
     "rxjs-compat": "^6.5.3",

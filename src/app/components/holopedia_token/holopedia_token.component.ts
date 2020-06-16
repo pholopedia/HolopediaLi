@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Team, Member } from './team.model';
+import { Lightbox } from 'ngx-lightbox';
 
 @Component({
   selector: 'app-holopedia_token',
@@ -10,7 +11,9 @@ export class HolopediaTokenComponent implements OnInit {
 
   team: Team = new Team();
 
-  constructor() { }
+  constructor(
+    private lightbox: Lightbox
+  ) { }
 
   ngOnInit() {
     this.team.members = [
@@ -21,6 +24,20 @@ export class HolopediaTokenComponent implements OnInit {
       {title: "BEng", name: "Mikkel Aagaard", imageFileName: "mikkel.png", linkedInUrl: "mikkel-aagaard-ab96585"}
     ]
 
+  }
+
+  open(src: string): void {
+    // open lightbox
+    this.lightbox.open([{
+      src: src,
+      caption: "caption",
+      thumb: "thumb"
+   }], 0);
+  }
+ 
+  close(): void {
+    // close lightbox programmatically
+    this.lightbox.close();
   }
 
 }

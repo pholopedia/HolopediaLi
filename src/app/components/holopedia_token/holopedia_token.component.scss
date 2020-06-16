@@ -17,7 +17,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     text-align: center;
-       
+
     img {
       width: 100%;
     }
@@ -26,4 +26,12 @@
       width: 30px;
     }
   }
+}
+
+.lb-outerContainer {
+  background: transparent;
+}
+
+.lightbox .lb-image {
+  border-width: 0;
 }
