@@ -10,6 +10,7 @@ import { Lightbox } from 'ngx-lightbox';
 export class HolopediaTokenComponent implements OnInit {
 
   team: Team = new Team();
+  partners;
   coinImageUrl = "assets/images/coin/HP_Holopedia.png";
 
   constructor(
@@ -25,6 +26,15 @@ export class HolopediaTokenComponent implements OnInit {
       {title: "BEng", name: "Mikkel Aagaard", imageFileName: "mikkel.png", linkedInUrl: "mikkel-aagaard-ab96585"}
     ]
 
+    this.partners = [
+      { name: "Quantum Holopedia", imageFile: "qh.png" },
+      { name: "AlphaData", imageFile: "alphadata.png" },
+      { name: "Quantum Foundation IVS", imageFile: "qf.png" },
+      { name: "Quantum", imageFile: "quantum.png" },
+      { name: "Private Institute for Natural Sciences PINS", imageFile: "pins.png" },
+      { name: "Center for ElectroTherapy CET Healy", imageFile: "healy.png" },
+      { name: "PINS Spinon", imageFile: "spinon.gif" },
+    ]
   }
 
   open(src: string): void {

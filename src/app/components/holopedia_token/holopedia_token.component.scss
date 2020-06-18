@@ -36,3 +36,37 @@
 .lightbox .lb-image {
   border-width: 0;
 }
+
+.partners-wrapper {
+  overflow: hidden;
+}
+
+.partners {
+  width: max-content;
+  animation: slidein linear 4s infinite;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.partner {
+  width: 200px;
+  display: inline-block;
+
+  span {
+    display: inline-block;
+    width: 100px;
+  }
+
+  img {
+    display: inline-block;
+    width: 100px;
+  }
+}

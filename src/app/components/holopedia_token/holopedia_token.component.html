@@ -32,4 +32,15 @@
       </div>
     </div>
   </div>
+
+  <h2>Holopedia Partners</h2>
+  <div class="partners-wrapper">
+    <div class="partners">
+      <div class="partner" *ngFor="let partner of partners">
+        <img src="/assets/images/partners/{{partner.imageFile}}" alt="">
+        <span>{{partner.name}}</span>
+      </div>
+    </div>
+  </div>
+
 </div>
