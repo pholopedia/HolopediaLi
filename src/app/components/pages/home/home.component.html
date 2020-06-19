@@ -10,28 +10,27 @@
 </div>
 <!-- <app-categories [categoriesNames]="projectsNames" [categoryType]="'project'"></app-categories> -->
 <div class="categories">
-    <span class="category spa">
+    <span class="category" *ngFor="let category of categories">
       <div class="image">
-        <img src="/assets/images/categories/trimmed/massage_stones.png" alt="">
+        <img src="/assets/images/categories/trimmed/{{category.imageFile}}" alt="{{category.name}}">
         <div class="shadow"></div>
       </div>
-        SPA Massage
-    </span>
-    <span class="category treatments">
-      <div class="image">
-          <img src="/assets/images/categories/trimmed/biofeedback.png" alt="">
-          <div class="shadow"></div>
-      </div>
-        Treatments
-    </span>
-    <span class="category knowledge">
-      <div class="image">
-          <img src="/assets/images/categories/trimmed/knowledge.png" alt="">
-        <div class="shadow"></div>
-      </div>
-        Knowledge
+      {{category.name}}
     </span>
 </div>
+
+<div class="technologies">
+  <div class="tech" *ngFor="let tech of technologies">
+    <div class="image">
+      <img src="/assets/images/emojis/{{tech.imageFile}}" alt="{{tech.name}}">
+    </div>
+    <div class="insert">
+      <h2>{{tech.name}}</h2>
+      <app-add-hologram></app-add-hologram>
+    </div>
+  </div>
+</div>
+
 <app-categories [categoriesNames]="sourcesNames" [categoryType]="'source'"></app-categories>
 
 <app-holograms-list></app-holograms-list>

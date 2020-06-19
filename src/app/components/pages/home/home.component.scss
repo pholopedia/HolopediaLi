@@ -63,3 +63,14 @@
 .link-to-club {
   text-align: center;
 }
+
+.tech {
+  display: grid;
+  grid-template-columns: 200px auto;
+  align-items: center;
+  column-gap: 20px;
+
+  img {
+    width: 100%;
+  }
+}
