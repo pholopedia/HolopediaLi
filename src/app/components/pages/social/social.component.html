@@ -4,6 +4,9 @@
       <img src="assets/images/social/youtube.png" alt="">
     </div>
     <div class="aspect-ratio">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/B2LmcUsY-xM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div><br><br>
+    <div class="aspect-ratio">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/OnncbSd7pG8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="aspect-ratio">
@@ -26,6 +29,7 @@
     <div class="socialimage">
       <img src="assets/images/social/twitter.png" alt="">
     </div>
+    <ngx-twitter-timeline [data]="{sourceType: 'url', url: 'https://twitter.com/HolopediaTube'}" [opts]="{tweetLimit: 5}"></ngx-twitter-timeline>
     <ngx-twitter-timeline [data]="{sourceType: 'url', url: 'https://twitter.com/HolopediaL'}" [opts]="{tweetLimit: 5}"></ngx-twitter-timeline>
   </div>
 </div>
