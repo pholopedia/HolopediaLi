@@ -14,11 +14,11 @@ export class NavigationComponent implements OnInit {
   menuItems: MenuItem[] = [
     new MenuItem("Holopedia Token", "/holopedia_token", { hasPreview: true }),
     new MenuItem("Holopedia Club", "/home", { hasPreview: true }),
-    new MenuItem("Timewaver & Healy", "https://quantumholopedia.eu/healy", { isExternal: true }),
-    new MenuItem("PINS Spinon", "http://pinsspinon.wodpress.com/", { isExternal: true, hasPreview: true }),
-    new MenuItem("Contact", "/contact"),
     new MenuItem("Social", "/social"),
+    new MenuItem("Contact", "/contact"),
     new MenuItem("Projects", "/projects", { hasPreview: true }),
+    new MenuItem("PINS Spinon", "http://pinsspinon.wodpress.com/", { isExternal: true, hasPreview: true }),
+    new MenuItem("Timewaver & Healy", "https://quantumholopedia.eu/healy", { isExternal: true }),
     // new MenuItem("Quantum Foundation Portals", "https://quantumfoundation.github.io/", { isExternal: true }),
   ]
 
