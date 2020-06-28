@@ -10,8 +10,8 @@
 </div>
 <!-- <app-categories [categoriesNames]="projectsNames" [categoryType]="'project'"></app-categories> -->
 <div class="categories">
-    <span class="category" *ngFor="let category of categories">
-      <div class="image">
+    <span class="category" *ngFor="let category of categories" [ngClass]="{'selected': selectedCategory == category.name}">
+      <div class="image" (click)="selectedCategory = category.name">
         <img src="/assets/images/categories/trimmed/{{category.imageFile}}" alt="{{category.name}}">
         <div class="shadow"></div>
       </div>
@@ -26,11 +26,12 @@
     </div>
     <div class="insert">
       <h2>{{tech.name}}</h2>
-      <app-add-hologram></app-add-hologram>
+      <app-add-hologram [category]="selectedCategory" [technology]="tech.name"></app-add-hologram>
+      <app-holograms-list [technology]="tech.name"></app-holograms-list>
     </div>
   </div>
 </div>
 
-<app-categories [categoriesNames]="sourcesNames" [categoryType]="'source'"></app-categories>
+<!-- <app-categories [categoriesNames]="sourcesNames" [categoryType]="'source'"></app-categories> -->
 
-<app-holograms-list></app-holograms-list>
+<!-- <app-holograms-list></app-holograms-list> -->

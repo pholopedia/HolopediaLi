@@ -2,7 +2,7 @@
   <div 
     class="hologram" 
     [ngClass]="{'sidebar': isInSidebar}" 
-    *ngFor="let hologram of filteredHolograms"
+    *ngFor="let hologram of holograms"
     (mouseenter)="hologram.hovered = true"
     (mouseleave)="hologram.hovered = false"
     >
@@ -16,7 +16,7 @@
           <div class="icon right fullscreen" (click)="showFullscreen()">Full</div>
         </div>
       </div>
-      <iframe [src]="hologram.url + '?showinfo=0&controls=0&autohide=1' | safe: 'resourceUrl'" frameborder="0" allow="autoplay; encrypted-media"
+      <iframe [src]="'https://youtube.com/embed/' + hologram.url + '?showinfo=0&controls=0&autohide=1' | safe: 'resourceUrl'" frameborder="0" allow="autoplay; encrypted-media"
         allowfullscreen scrolling="no"></iframe>
     </div>
   </div>

@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
   sourcesNames: string[];
   categories;
   technologies;
+  selectedCategory = "SPA Massage";
+  holograms;
 
   constructor(
     public hologramsService: HologramsService,
@@ -23,6 +25,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.projectsNames = this.projectsService.MasterProjectsNames;
     this.sourcesNames = this.hologramsService.Sources;
+    this.hologramsService.get().subscribe(holograms => {
+      this.holograms = holograms;
+    })
 
     this.categories = [
       { name: "SPA Massage", imageFile: "massage_stones.png" },

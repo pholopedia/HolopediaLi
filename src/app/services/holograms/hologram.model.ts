@@ -4,4 +4,6 @@ export class Hologram {
     title: string;
     source: string;
     project?: string;
+    technology?: string;
+    category?: string;
 }

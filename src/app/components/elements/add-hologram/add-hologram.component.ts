@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Hologram } from '../../../services/holograms/hologram.model';
 import { HologramsService } from '../../../services/holograms/holograms.service';
 import { Router, ActivatedRoute, RoutesRecognized, Params } from '@angular/router';
@@ -12,6 +12,8 @@ export class AddHologramComponent implements OnInit {
   
   hologramUrl: string;
   projectName: string;
+  @Input() category: string;
+  @Input() technology: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,12 +27,15 @@ export class AddHologramComponent implements OnInit {
   }
   addHologram() {
     var item: Hologram = {
-      id: "sampleid",
+      id: "",
       url: this.hologramUrl.replace("watch?v=", "embed/"),
       title: "sample title",
       source: "YouTube",
-      project: this.projectName,
+      category: this.category,
+      technology: this.technology
     }
+
+    console.log({item})
 
     this.hologramsService.add(item).then((doc: Hologram) => {
         item.id = doc.id;

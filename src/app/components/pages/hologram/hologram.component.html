@@ -11,7 +11,7 @@
       <div *ngIf="isFullscreen" class="fullscreen-hologram-topbar">
         <div class="closeButton" (click)="isFullscreen = false">X</div>
       </div>
-      <iframe [src]="selectedHologram.url | safe: 'resourceUrl'" frameborder="0" allow="autoplay; encrypted-media"
+      <iframe [src]="'https://youtube.com/embed/' + selectedHologram.url + '?showinfo=0&controls=0&autohide=1' | safe: 'resourceUrl'" frameborder="0" allow="autoplay; encrypted-media"
         allowfullscreen>
       </iframe>
     </div>
