@@ -1,22 +1,35 @@
 <h1>Holopedia HPA welcomes you</h1>
 
-<div class="link-to-club"><a href="http://holopedia.github.io" target="_blank"><h2>Holopedia Club</h2></a></div>
+<div class="link-to-club"><a href="http://holopedia.github.io" target="_blank">
+    <h2>Holopedia Club</h2>
+  </a>
+</div>
 
-<div class="header">
-    <h2>Share your favourite holograms!</h2>
+<div class="technologies">
+  <div class="tech">
+    <div class="image">
+      <img src="/assets/images/emojis/holopedia_all.png" alt="holopedia holograms">
+    </div>
+    <div class="insert">
+      <h2>Share your favourite holograms and information about holographic technology!</h2>
+      <h3>Insert YouTube video id</h3>
+      <app-add-hologram [category]="selectedCategory" [technology]="'all'"></app-add-hologram>
+      <app-holograms-list [technology]="'all'"></app-holograms-list>
+    </div>
+  </div>
 </div>
-<div class="add-hologram-wrap">
-    <app-add-hologram></app-add-hologram>
-</div>
+
 <!-- <app-categories [categoriesNames]="projectsNames" [categoryType]="'project'"></app-categories> -->
 <div class="categories">
-    <span class="category" *ngFor="let category of categories" [ngClass]="{'selected': selectedCategory == category.name}">
-      <div class="image" (click)="selectedCategory = category.name">
-        <img src="/assets/images/categories/trimmed/{{category.imageFile}}" alt="{{category.name}}">
-        <div class="shadow"></div>
-      </div>
-      {{category.name}}
-    </span>
+  <span class="category" *ngFor="let category of categories"
+    [ngClass]="{'selected': selectedCategory == category.name}"
+    (click)="selectedCategory = category.name">
+    <div class="image">
+      <img src="/assets/images/categories/trimmed/{{category.imageFile}}" alt="{{category.name}}">
+      <div class="shadow"></div>
+    </div>
+    {{category.name}}
+  </span>
 </div>
 
 <div class="technologies">

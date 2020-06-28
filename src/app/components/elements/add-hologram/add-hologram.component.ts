@@ -35,11 +35,11 @@ export class AddHologramComponent implements OnInit {
       technology: this.technology
     }
 
-    console.log({item})
-
     this.hologramsService.add(item).then((doc: Hologram) => {
         item.id = doc.id;
         this.hologramsService.update(item);
     });
+
+    this.hologramUrl = "";
   }
 }
