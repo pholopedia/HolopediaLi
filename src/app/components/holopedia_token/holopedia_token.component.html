@@ -42,14 +42,34 @@
   <div class="partners-wrapper">
     <div class="partners">
       <div class="partner" *ngFor="let partner of partners">
-        <img src="/assets/images/partners/{{partner.imageFile}}" alt="">
-        <span>{{partner.name}}</span>
+        <ng-container 
+             [ngTemplateOutlet]="partner.url ? partnerLinked : partnerUnlined" 
+             [ngTemplateOutletContext]="{partner:partner}">
+        </ng-container>
       </div>
       <div class="partner" *ngFor="let partner of partners">
-        <img src="/assets/images/partners/{{partner.imageFile}}" alt="">
-        <span>{{partner.name}}</span>
+        <ng-container 
+             [ngTemplateOutlet]="partner.url ? partnerLinked : partnerUnlined" 
+             [ngTemplateOutletContext]="{partner:partner}">
+        </ng-container>
       </div>
     </div>
   </div>
+
+  <ng-template #partnerLinked let-partner='partner'>
+    <a [href]="partner.url" target="_blank">
+      <ng-container 
+        [ngTemplateOutlet]="partnerUnlined" 
+        [ngTemplateOutletContext]="{partner:partner}">
+      </ng-container>
+    </a>
+  </ng-template>
+
+  <ng-template #partnerUnlined let-partner='partner'>
+    <div class="partnerInner">
+      <img src="/assets/images/partners/{{partner.imageFile}}" alt="">
+      <span>{{partner.name}}</span>
+    </div>
+  </ng-template>
 
 </div>

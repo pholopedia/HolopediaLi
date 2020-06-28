@@ -27,13 +27,13 @@ export class HolopediaTokenComponent implements OnInit {
     ]
 
     this.partners = [
-      { name: "Quantum Holopedia", imageFile: "qh.png" },
+      { name: "Quantum Holopedia", imageFile: "qh.png", url: "http://quantumholopedia.eu/" },
       { name: "AlphaData", imageFile: "alphadata.png" },
-      { name: "Quantum Foundation IVS", imageFile: "qf.png" },
+      { name: "Quantum Foundation IVS", imageFile: "qf.png", url: "http://quantumfoundation.eu/" },
       { name: "Quantum", imageFile: "quantum.png" },
-      { name: "Private Institute for Natural Sciences PINS", imageFile: "pins.png" },
-      { name: "Center for ElectroTherapy CET Healy", imageFile: "healy.png" },
-      { name: "PINS Spinon", imageFile: "spinon.gif" },
+      { name: "Private Institute for Natural Sciences PINS", imageFile: "pins.png", url: "https://pinsind.wordpress.com/" },
+      { name: "Center for ElectroTherapy CET Healy", imageFile: "healy.png", url: "https://cetdata.wordpress.com/" },
+      { name: "PINS Spinon", imageFile: "spinon.gif", url: "http://pinsspinon.wordpress.com/" },
     ]
   }
 
