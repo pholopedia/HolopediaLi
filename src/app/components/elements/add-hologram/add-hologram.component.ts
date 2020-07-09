@@ -28,18 +28,26 @@ export class AddHologramComponent implements OnInit {
   addHologram() {
     var item: Hologram = {
       id: "",
-      url: this.hologramUrl.replace("watch?v=", "embed/"),
+      url: this.getYoutubeId(this.hologramUrl),
       title: "sample title",
       source: "YouTube",
       category: this.category,
       technology: this.technology
     }
 
-    this.hologramsService.add(item).then((doc: Hologram) => {
-        item.id = doc.id;
-        this.hologramsService.update(item);
-    });
+    alert(this.getYoutubeId(this.hologramUrl))
+
+    // this.hologramsService.add(item).then((doc: Hologram) => {
+    //     item.id = doc.id;
+    //     this.hologramsService.update(item);
+    // });
 
     this.hologramUrl = "";
+  }
+
+  getYoutubeId(url) {
+    var regExp = /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    return (match&&match[1].length==11)? match[1] : false;
   }
 }

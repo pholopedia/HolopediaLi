@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
       { name: "Holopedia Pyramid", imageFile: "holopedia_pyramid.png" },
       { name: "Holopedia Looking Glass", imageFile: "holopedia_looking_glass.png" },
       { name: "Holopedia HoloTube", imageFile: "holopedia_holotube.png" },
+      { name: "Holopedia HoloVocaloid", imageFile: "holopedia_holovocaloid.png" },
     ]
   }
 
