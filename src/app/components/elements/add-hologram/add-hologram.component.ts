@@ -35,12 +35,10 @@ export class AddHologramComponent implements OnInit {
       technology: this.technology
     }
 
-    alert(this.getYoutubeId(this.hologramUrl))
-
-    // this.hologramsService.add(item).then((doc: Hologram) => {
-    //     item.id = doc.id;
-    //     this.hologramsService.update(item);
-    // });
+    this.hologramsService.add(item).then((doc: Hologram) => {
+        item.id = doc.id;
+        this.hologramsService.update(item);
+    });
 
     this.hologramUrl = "";
   }

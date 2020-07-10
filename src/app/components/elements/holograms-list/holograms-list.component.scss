@@ -1,12 +1,17 @@
 @import "../../../../styles/breakpoints";
 
 .holograms {
-  margin: 20px 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .hologram {
-  display: inline-block;
-  width: 20%;
+  display: contents;
+
+  img {
+    width: 100%;
+    cursor: pointer;
+  }
 
   @include bp-down(sm) {
     width: 50%;
