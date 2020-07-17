@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   projectsNames: string[];
   sourcesNames: string[];
   categories;
+  commonTech;
   technologies;
   selectedCategory = "SPA Massage";
   holograms;
@@ -35,14 +36,16 @@ export class HomeComponent implements OnInit {
       { name: "Knowledge", imageFile: "knowledge.png" },
       { name: "Zuberec", imageFile: "zuberec.jpg" },
     ]
+    
 
+    this.commonTech = { name: "Holopedia", imageFile: "holopedia_all.png", youtubeLink: "UCVH4K61XQN70kCvRSdbW1bQ" },
     this.technologies = [
-      { name: "Holopedia 3D LED fans", imageFile: "holopedia_3D_LED_fans.png" },
-      { name: "Holopedia VR", imageFile: "holopedia_vr.png" },
-      { name: "Holopedia Pyramid", imageFile: "holopedia_pyramid.png" },
-      { name: "Holopedia Looking Glass", imageFile: "holopedia_looking_glass.png" },
-      { name: "Holopedia HoloTube", imageFile: "holopedia_holotube.png" },
-      { name: "Holopedia HoloVocaloid", imageFile: "holopedia_holovocaloid.png" },
+      { name: "Holopedia 3D LED fans", imageFile: "holopedia_3D_LED_fans.png", youtubeLink: "UCb-4yG4ukOfB44br9F9U5mw" },
+      { name: "Holopedia VR", imageFile: "holopedia_vr.png", youtubeLink: "UC5mRbkIiW8hkMGccSQh4HKQ" },
+      { name: "Holopedia Pyramid", imageFile: "holopedia_pyramid.png", youtubeLink: "UC8JZ43d_HHEYOtdwIDTh1mw" },
+      { name: "Holopedia Looking Glass", imageFile: "holopedia_looking_glass.png", youtubeLink: "UChiKIf1CbXjaNowu3sXuSFQ" },
+      { name: "Holopedia HoloTube", imageFile: "holopedia_holotube.png", youtubeLink: "UCdgH0vobd_5ZoyuuyrFqQyQ" },
+      { name: "Holopedia HoloVocaloid", imageFile: "holopedia_holovocaloid.png", youtubeLink: "UCBa6Ne4Cq98N8lNhmbyDpZQ" },
     ]
   }
 
