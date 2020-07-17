@@ -1,10 +1,10 @@
 <div class="header">
-  <img [src]="coinImageUrl" (click)="open(coinImageUrl)" alt="holopedia token">
+  <img class="expandable" [src]="coinImage.url" (click)="open(coinImage)" [alt]="coinImage.caption">
   <div class="title">
     <h1>Holopedia Token</h1>
     <h2>HPA</h2>
   </div>
-  <img [src]="coinImageUrl" (click)="open(coinImageUrl)" alt="holopedia token">
+  <img class="expandable" [src]="coinImage.url" (click)="open(coinImage)" [alt]="coinImage.caption">
 </div>
 
 <div class="content">
@@ -15,51 +15,81 @@
     platform users. Holopedia will incentivize users to upload holographic data of different kind by rewarding them
     Holopedia Tokens.<br><br>
 
-    Holopedia Token is an ERC20 token and thus benefits from simple adaptivity, you just need to add the token to your 
-    favourite Ethereum wallet (search by token name or by contract key from 
-    <a href="https://etherscan.io/token/0x790b3425e48fdEfA9fd9234462E4634594B23835" target="_blanks">Etherscan</a>).<br><br>
-    
-    Holopedia Token is currently developeing holograms oriented DApps (HoloApps) that will facilitate gamification of the 
+    Holopedia Token is an ERC20 token and thus benefits from simple adaptivity, you just need to add the token to your
+    favourite Ethereum wallet (search by token name or by contract key from
+    <a href="https://etherscan.io/token/0x790b3425e48fdEfA9fd9234462E4634594B23835"
+      target="_blanks">Etherscan</a>).<br><br>
+
+    Holopedia Token is currently developeing holograms oriented DApps (HoloApps) that will facilitate gamification of
+    the
     activities around hologram content browsing, sharing and use in specialized display devices. <br>
     With HoloApps the users will be able to interact with the network and easily obtain Holopedia Tokens
-    from activity on the site. 
-    
+    from activity on the site.
+
     <h4>Funds</h4>
-    Funds generated withing Holopedia Project will be invested in access to medical body scanning equipment 
-    such as MRI, CT scan to gather data to build health related holograms, and in later stage work towards 
+    Funds generated withing Holopedia Project will be invested in access to medical body scanning equipment
+    such as MRI, CT scan to gather data to build health related holograms, and in later stage work towards
     personalized, hologram assisted therapies available for Holopedia Network users, therapists, doctors. <br><br>
 
-    <img src="assets/images/HolopediaProjectTable.PNG" alt="">
-    <span class="caption">Holopedia Project HP Token</span> <br><br>
-    [Architecture Holopedia] Quantum states are characterized such that they cannot be directly observed without the change of those states
+    <img class="expandable" [src]="holopediaProjectTable.url" (click)="open(holopediaProjectTable)" [alt]="holopediaProjectTable.caption">
+    <span class="caption">{{holopediaProjectTable.caption}}</span> <br><br>
+    [Architecture Holopedia] Quantum states are characterized such that they cannot be directly observed without the
+    change of those states
     throught the act of observation. Other means need to be developed to be able to make use from given quantum states.
     A proposed way is through holography and holographic tools. Melanie Swan (Swan, June 2020 [1]) describes such
-    technology where quantum computing is an Internet cloud environment with holographic control theory used as macroscale controller.<br><br>
+    technology where quantum computing is an Internet cloud environment with holographic control theory used as
+    macroscale controller.<br><br>
 
-    [DLT HP] Holopedia Project closely observes and follows the preparations for Quantum Blockchain (Swan, 2020 [2]) emergence which in the next phase
-    will the network of choice that better suits the Holopedia Project's vision to manufacture and operate holograms a means to interface with 
+    [DLT HP] Holopedia Project closely observes and follows the preparations for Quantum Blockchain (Swan, 2020 [2])
+    emergence which in the next phase
+    will the network of choice that better suits the Holopedia Project's vision to manufacture and operate holograms a
+    means to interface with
     quantum physics realm.<br><br>
 
-    [Holarchies] Holarchy, a holon based type of hierarchy, is characterized such that every of its levels is 
+    [Holarchies] Holarchy, a holon based type of hierarchy, is characterized such that every of its levels is
     the whole at different resolution. Many recents theories describe human consciousness as a holonic element
-    of universe~wide holarchy and as such distributed in every part of the cosmosphere, a quantum-holographic brain-mind [3]<br><br>
+    of universe~wide holarchy and as such distributed in every part of the cosmosphere, a quantum-holographic brain-mind
+    [3]<br><br>
 
-    [organizations] An organizational pattern of the system can be called holographic when its inner orderliness is governed by multilevel, multidirectional, 
-    and complex holistic information network system formed by internal feedback loops that follows holoinformational and self-organizing theory [4].<br><br>
+    [organizations] An organizational pattern of the system can be called holographic when its inner orderliness is
+    governed by multilevel, multidirectional,
+    and complex holistic information network system formed by internal feedback loops that follows holoinformational and
+    self-organizing theory [4].<br><br>
 
 
 
-    <div>[1] Melanie Swan, "<a href="https://www.researchgate.net/profile/Melanie_Swan/publication/342184271_BCI_Quantum_Computing_IPLD_for_Brain/links/5ee7fa69a6fdcc73be7fa76a/BCI-Quantum-Computing-IPLD-for-Brain.pdf" target="_blank">B/CI: Quantum Computing, Holographic Control Theory, and Blockchain IPLD for Brain </a>", June 2020</div>
-    <div>[2] Melanie Swan, et al., "<a href="https://books.google.pl/books?id=FDHnDwAAQBAJ&amp;lpg=PA355&amp;dq=holograms%20with%20blockchain%20networks&amp;pg=PA113#v=onepage&amp;q&amp;f=false" target="_blank">Quantum Computing: Physics, Blockchains, And Deep Learning Smart Networks</a>", Between Science and Economics Vol.2, 2020</div>
-    <div>[3] Francisco Di Biase, "<a href="https://www.worldscientific.com/doi/10.1142/9789814719063_0025" target="_blank">The Unified Field of Consciousness</a>", Unified Field Mechanics, chapter 25, 2016</div>
-    <div>[4] Kun Wu, and Qiong Nan, "<a href="https://www.hindawi.com/journals/complexity/2019/5603685/" target="_blank">Information Characteristics, Processes, and Mechanisms of Self-Organization Evolution</a>", Hidawi, Complexity, 2019</div>
-    <div>[1] Dirk K F Meijer, "<a href="https://www.researchgate.net/profile/Dirk_Meijer4/publication/275016988_The_Extended_Brain_Cyclic_Information_Flow_in_a_Quantum_Physical_Realm/links/555c631a08ae91e75e76f2d6.pdf" target="_blank">The Extended Brain: Cyclic Information Flow in a Quantum Physical Realm</a>", NeuroQuantology, 2014</div>
+    <div>[1] Melanie Swan, "<a
+        href="https://www.researchgate.net/profile/Melanie_Swan/publication/342184271_BCI_Quantum_Computing_IPLD_for_Brain/links/5ee7fa69a6fdcc73be7fa76a/BCI-Quantum-Computing-IPLD-for-Brain.pdf"
+        target="_blank">B/CI: Quantum Computing, Holographic Control Theory, and Blockchain IPLD for Brain </a>", June
+      2020</div>
+    <div>[2] Melanie Swan, et al., "<a
+        href="https://books.google.pl/books?id=FDHnDwAAQBAJ&amp;lpg=PA355&amp;dq=holograms%20with%20blockchain%20networks&amp;pg=PA113#v=onepage&amp;q&amp;f=false"
+        target="_blank">Quantum Computing: Physics, Blockchains, And Deep Learning Smart Networks</a>", Between Science
+      and Economics Vol.2, 2020</div>
+    <div>[3] Francisco Di Biase, "<a href="https://www.worldscientific.com/doi/10.1142/9789814719063_0025"
+        target="_blank">The Unified Field of Consciousness</a>", Unified Field Mechanics, chapter 25, 2016</div>
+    <div>[4] Kun Wu, and Qiong Nan, "<a href="https://www.hindawi.com/journals/complexity/2019/5603685/"
+        target="_blank">Information Characteristics, Processes, and Mechanisms of Self-Organization Evolution</a>",
+      Hidawi, Complexity, 2019</div>
+    <div>[1] Dirk K F Meijer, "<a
+        href="https://www.researchgate.net/profile/Dirk_Meijer4/publication/275016988_The_Extended_Brain_Cyclic_Information_Flow_in_a_Quantum_Physical_Realm/links/555c631a08ae91e75e76f2d6.pdf"
+        target="_blank">The Extended Brain: Cyclic Information Flow in a Quantum Physical Realm</a>", NeuroQuantology,
+      2014</div>
     <div>[1] "<a href="https://www.ultraleap.com/haptics/" target="_blank">Ultraleap Haptics system</a>"</div>
-    <div>[1] "<a href="https://www.ft.com/content/afbfcbf6-e4ff-11e7-a685-5634466a6915" target="_blank">Holograms are changing the way we interact with computers</a>", Special Report Technology sector </div>
-    <div>[1] "<a href="https://www.marketwatch.com/press-release/google-facebook-apple-wimi-hologram-cloud-nasdaqwimi-are-competing-on-ar-blockchain-combination-field-2020-04-23" target="_blank">Google, Facebook, Apple, WIMI Hologram Cloud (Nasdaq:WIMI) are Competing on AR + Blockchain Combination Field</a>", (http://en.wimiar.com/) marketwatch.com, April 23, 2020</div>
-    <div>[1] "<a href="https://www.worldscientific.com/doi/abs/10.1142/9789814644266_0007" target="_blank">THE HOLOINFORMATIONAL HOLOINFORMATION FOUNDATIONS OF CONSCIOUSNESS</a>",Biophysics of Consciousness, chapter 7, 2016 </div>
-    <div>[1] "<a href="https://blog.ct-networks.io/holograms-how-they-will-affect-social-interaction-dcf76862612e" target="_blank">Holograms & How They Will Affect Social Interaction</a>", CT WiFi, Mar 29, 2016</div>
-    <div>[1] Larry Alton, "<a href="https://socialmediaweek.org/blog/2017/11/holographic-social-media-future-marketing/" target="_blank">Is Holographic Storytelling The Future Of Social Media Marketing?</a>"SOcial Media Week, 2017 </div>
+    <div>[1] "<a href="https://www.ft.com/content/afbfcbf6-e4ff-11e7-a685-5634466a6915" target="_blank">Holograms are
+        changing the way we interact with computers</a>", Special Report Technology sector </div>
+    <div>[1] "<a
+        href="https://www.marketwatch.com/press-release/google-facebook-apple-wimi-hologram-cloud-nasdaqwimi-are-competing-on-ar-blockchain-combination-field-2020-04-23"
+        target="_blank">Google, Facebook, Apple, WIMI Hologram Cloud (Nasdaq:WIMI) are Competing on AR + Blockchain
+        Combination Field</a>", (http://en.wimiar.com/) marketwatch.com, April 23, 2020</div>
+    <div>[1] "<a href="https://www.worldscientific.com/doi/abs/10.1142/9789814644266_0007" target="_blank">THE
+        HOLOINFORMATIONAL HOLOINFORMATION FOUNDATIONS OF CONSCIOUSNESS</a>",Biophysics of Consciousness, chapter 7, 2016
+    </div>
+    <div>[1] "<a href="https://blog.ct-networks.io/holograms-how-they-will-affect-social-interaction-dcf76862612e"
+        target="_blank">Holograms & How They Will Affect Social Interaction</a>", CT WiFi, Mar 29, 2016</div>
+    <div>[1] Larry Alton, "<a href="https://socialmediaweek.org/blog/2017/11/holographic-social-media-future-marketing/"
+        target="_blank">Is Holographic Storytelling The Future Of Social Media Marketing?</a>"SOcial Media Week, 2017
+    </div>
     <!-- <div>[1] , "<a href="" target="_blank"></a>",</div> -->
 
   </div>
@@ -71,8 +101,8 @@
   <h2>Holopedia Team</h2>
   <div class="team">
     <div class="member" *ngFor="let member of team.members">
-      <img src="assets/images/team/{{member.imageFileName}}" [alt]="member.name">
-      <span>{{member.name}}, {{member.title}}</span>
+      <img [src]="hybridImage.url" (click)="open(hybridImage)" [alt]="hybridImage.caption">
+    <span>{{member.name}}, {{member.title}}</span>
       <div class="linkedin">
         <a href="https://www.linkedin.com/in/{{member.linkedInUrl}}/" target="_blank">
           <img src="assets/images/linkedin_icon.png" alt="Linkedin icon">
@@ -85,15 +115,13 @@
   <div class="partners-wrapper">
     <div class="partners">
       <div class="partner" *ngFor="let partner of partners">
-        <ng-container 
-             [ngTemplateOutlet]="partner.url ? partnerLinked : partnerUnlined" 
-             [ngTemplateOutletContext]="{partner:partner}">
+        <ng-container [ngTemplateOutlet]="partner.url ? partnerLinked : partnerUnlined"
+          [ngTemplateOutletContext]="{partner:partner}">
         </ng-container>
       </div>
       <div class="partner" *ngFor="let partner of partners">
-        <ng-container 
-             [ngTemplateOutlet]="partner.url ? partnerLinked : partnerUnlined" 
-             [ngTemplateOutletContext]="{partner:partner}">
+        <ng-container [ngTemplateOutlet]="partner.url ? partnerLinked : partnerUnlined"
+          [ngTemplateOutletContext]="{partner:partner}">
         </ng-container>
       </div>
     </div>
@@ -101,9 +129,7 @@
 
   <ng-template #partnerLinked let-partner='partner'>
     <a [href]="partner.url" target="_blank">
-      <ng-container 
-        [ngTemplateOutlet]="partnerUnlined" 
-        [ngTemplateOutletContext]="{partner:partner}">
+      <ng-container [ngTemplateOutlet]="partnerUnlined" [ngTemplateOutletContext]="{partner:partner}">
       </ng-container>
     </a>
   </ng-template>
@@ -115,4 +141,53 @@
     </div>
   </ng-template>
 
+  <h2>Holopedia Token ~ Technical procedures</h2>
+
+  <h4>Holopedia Ecosystem</h4>
+  <p>
+    Holopedia ecosystem is built with tokens & coins developed on Distributed Ledger Technology (DLT). Holopedia
+    Tokens
+    are smart contracts
+    within Ethereum network (ERC20) and Holopedia Coins are so called alt coins.
+  </p>
+  <p>
+    Both tokens and coins are deployed within DLT network and they are synchronized across the entire network. The
+    synchronisation is handled by the Client Synchronization Protocol which is a secure mechanism the role of which is
+    to update the server gets whenever any new transaction is made within the network. All new transactions within the
+    network are automatically synchronized with clients that are connected to the network. THe clientx is ready to
+    indtroduce new transactions when first it is synchronized with the network.
+  </p>
+
+  <h4>Tokens & Coins distribution & exchanges structure</h4>
+
+  <p>
+    Holopedia Tokens are ERC20 tokens and thus benefits from simple adoption. You can use your favorite Ethereum wallet
+    and add the token either by the token name, or using a contract key that you can find on
+    <a href="https://etherscan.io/token/0x790b3425e48fdEfA9fd9234462E4634594B23835">Etherscan</a>.
+  </p>
+
+  <h4>Internal payment</h4>
+  <p>
+    Holopedia Tokens has been created to serve as a payment method for holographic & 3D content that is shared
+    among platform users. Holopedia project facilitates user based content and will rewarding them Holopedia Tokens &
+    Coins for various activites on the network including signing up, refererring other users and uploading
+    holographic & 3D contect.
+  </p>
+
+  <h4>Holopedia Hybrid Distributed Ledger Technology DLT</h4>
+  <p>
+    Distributed Ledger Technology is a decentrilized network that does not consist of one point of failure.
+    Data is distributed and syncronized across the nodes where each node contain the cope of the entire ledger.
+    This has several advantages over centralized network. It is not dependant on a central authority, both in terms
+    of decision making and for the data safety. The security of the transactions within the network is validated by
+    the whole network through its concensus algorithm. 
+  </p>
+    <img class="expandable" [src]="hybridImage.url" (click)="open(hybridImage)" [alt]="hybridImage.caption">
+    <div class="caption">{{hybridImage.caption}}</div>
+  <p>
+    A proposal to introduce internal fees and settlements in the Holopedia network using Coins based on Distributed
+    Ledger
+    Technologies (DLT). Within that, we offer server support with supermicro servers with the possibility of server
+    cluster expansion and DLT service support.
+  </p>
 </div>

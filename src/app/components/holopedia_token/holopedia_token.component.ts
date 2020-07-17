@@ -11,7 +11,12 @@ export class HolopediaTokenComponent implements OnInit {
 
   team: Team = new Team();
   partners;
-  coinImageUrl = "assets/images/coin/HP_Holopedia.png";
+
+  // images
+  imagesPath = "assets/images/coin/";
+  coinImage = {url: this.imagesPath + "HP_Holopedia.png", caption: "Holopedia Coin"};
+  holopediaProjectTable = {url: this.imagesPath + "HolopediaProjectTable.png", caption: "Holopedia Project HP Token"};
+  hybridImage = {url: this.imagesPath + "Private_Public_DLT.png", caption: "Schematic for hybrid DLT, courtesy https://www.he3labs.com/"};
 
   constructor(
     private lightbox: Lightbox
@@ -37,11 +42,11 @@ export class HolopediaTokenComponent implements OnInit {
     ]
   }
 
-  open(src: string): void {
+  open(image: any): void {
     // open lightbox
     this.lightbox.open([{
-      src: src,
-      caption: "caption",
+      src: image.url,
+      caption: image.caption,
       thumb: "thumb"
    }], 0);
   }
