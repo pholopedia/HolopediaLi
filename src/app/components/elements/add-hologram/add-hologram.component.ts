@@ -28,7 +28,7 @@ export class AddHologramComponent implements OnInit {
   addHologram() {
     var item: Hologram = {
       id: "",
-      url: this.hologramUrl.replace("watch?v=", "embed/"),
+      url: this.getYoutubeId(this.hologramUrl),
       title: "sample title",
       source: "YouTube",
       category: this.category,
@@ -41,5 +41,11 @@ export class AddHologramComponent implements OnInit {
     });
 
     this.hologramUrl = "";
+  }
+
+  getYoutubeId(url) {
+    var regExp = /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    return (match&&match[1].length==11)? match[1] : false;
   }
 }

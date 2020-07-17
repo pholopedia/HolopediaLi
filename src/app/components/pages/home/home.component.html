@@ -5,17 +5,15 @@
   </a>
 </div>
 
+<h2>Share your favourite holograms and information about holographic technology!</h2>
+<h3>Insert YouTube video link</h3>
+
 <div class="technologies">
   <div class="tech">
-    <div class="image">
-      <img src="/assets/images/emojis/holopedia_all.png" alt="holopedia holograms">
-    </div>
-    <div class="insert">
-      <h2>Share your favourite holograms and information about holographic technology!</h2>
-      <h3>Insert YouTube video id</h3>
-      <app-add-hologram [category]="selectedCategory" [technology]="'all'"></app-add-hologram>
-      <app-holograms-list [technology]="'all'"></app-holograms-list>
-    </div>
+    <ng-container 
+      [ngTemplateOutlet]="techInserter" 
+      [ngTemplateOutletContext]="{tech:commonTech}">
+    </ng-container>
   </div>
 </div>
 
@@ -34,16 +32,27 @@
 
 <div class="technologies">
   <div class="tech" *ngFor="let tech of technologies">
-    <div class="image">
-      <img src="/assets/images/emojis/{{tech.imageFile}}" alt="{{tech.name}}">
-    </div>
-    <div class="insert">
-      <h2>{{tech.name}}</h2>
-      <app-add-hologram [category]="selectedCategory" [technology]="tech.name"></app-add-hologram>
-      <app-holograms-list [technology]="tech.name"></app-holograms-list>
-    </div>
+    <ng-container 
+        [ngTemplateOutlet]="techInserter" 
+        [ngTemplateOutletContext]="{tech:tech}">
+    </ng-container>
   </div>
 </div>
+
+
+<ng-template #techInserter let-tech='tech'>
+  <div class="image">
+    <img src="/assets/images/emojis/{{tech.imageFile}}" alt="{{tech.name}}">
+  </div>
+  <div class="insert">
+    <h2>
+      <a [href]="'https://www.youtube.com/channel/' + tech.youtubeLink" target="_blank"><img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/youtube-512.png" alt=""></a>
+      <span>{{tech.name}}</span>
+    </h2>
+    <app-add-hologram [category]="selectedCategory" [technology]="tech.name"></app-add-hologram>
+    <app-holograms-list [technology]="tech.name"></app-holograms-list>
+  </div>
+</ng-template>
 
 <!-- <app-categories [categoriesNames]="sourcesNames" [categoryType]="'source'"></app-categories> -->
 

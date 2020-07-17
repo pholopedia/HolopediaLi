@@ -6,18 +6,19 @@
     (mouseenter)="hologram.hovered = true"
     (mouseleave)="hologram.hovered = false"
     >
-    <div class="aspect-ratio hologram-icon" >
-        <div class="hologramOverlay switched-off" (click)="selectHologram(hologram)" *ngIf="!hologram.hovered">
+    <!-- <div class="aspect-ratio hologram-icon" >
+       <div class="hologramOverlay switched-off" (click)="selectHologram(hologram)" *ngIf="!hologram.hovered">
 
         </div>
-      <div class="hologramOverlay" (click)="selectHologram(hologram)" *ngIf="hologram.hovered">
+        <div class="hologramOverlay" (click)="selectHologram(hologram)" *ngIf="hologram.hovered">
         <div class="icons">
           <div class="icon left show">Show</div>
           <div class="icon right fullscreen" (click)="showFullscreen()">Full</div>
         </div>
-      </div>
+      </div> 
       <iframe [src]="'https://youtube.com/embed/' + hologram.url + '?showinfo=0&controls=0&autohide=1' | safe: 'resourceUrl'" frameborder="0" allow="autoplay; encrypted-media"
-        allowfullscreen scrolling="no"></iframe>
+        allowfullscreen scrolling="no"></iframe> 
+    </div> -->
+      <img (click)="selectHologram(hologram)" [src]="'https://img.youtube.com/vi/' + hologram.url + '/mqdefault.jpg'" alt="">
     </div>
-  </div>
 </div>
