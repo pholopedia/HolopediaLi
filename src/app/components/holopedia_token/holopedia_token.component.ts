@@ -13,10 +13,12 @@ export class HolopediaTokenComponent implements OnInit {
   partners;
 
   // images
-  imagesPath = "assets/images/coin/";
-  coinImage = {url: this.imagesPath + "HP_Holopedia.png", caption: "Holopedia Coin"};
-  holopediaProjectTable = {url: this.imagesPath + "HolopediaProjectTable.png", caption: "Holopedia Project HP Token"};
-  hybridImage = {url: this.imagesPath + "Private_Public_DLT.png", caption: "Schematic for hybrid DLT, courtesy https://www.he3labs.com/"};
+  imagesPath = "assets/images/";
+  coinImagesPath = this.imagesPath + "coin/";
+  teamImagesPath = this.imagesPath + "team/";
+  coinImage = {url: this.coinImagesPath + "HP_Holopedia.png", caption: "Holopedia Coin"};
+  holopediaProjectTable = {url: this.coinImagesPath + "HolopediaProjectTable.png", caption: "Holopedia Project HP Token"};
+  hybridImage = {url: this.coinImagesPath + "Private_Public_DLT.png", caption: "Schematic for hybrid DLT, courtesy https://www.he3labs.com/"};
 
   constructor(
     private lightbox: Lightbox
@@ -24,11 +26,11 @@ export class HolopediaTokenComponent implements OnInit {
 
   ngOnInit() {
     this.team.members = [
-      {title: "PhD", name: "Tadeusz Habdank-Wojewódzki", imageFileName: "tadeusz.png", linkedInUrl: "tadeusz-habdank-22128a63"},
-      {title: "PhD", name: "Seweryn Habdank-Wojewódzki", imageFileName: "sewi.png", linkedInUrl: "habdank"},
-      {title: "MA", name: "Monika Radwańska", imageFileName: "monia.png", linkedInUrl: "monika-radwanska-1666b314"},
-      {title: "MSc", name: "Felicja Habdank", imageFileName: "feli.png", linkedInUrl: "felicja-habdank-2a45111b0"},
-      {title: "BEng", name: "Mikkel Aagaard", imageFileName: "mikkel.png", linkedInUrl: "mikkel-aagaard-ab96585"}
+      {title: "PhD", name: "Tadeusz Habdank-Wojewódzki", imageFile: { url: this.teamImagesPath + "tadeusz.png", caption: "Tadeusz Habdank-Wojewódzki, PhD"}, linkedInUrl: "tadeusz-habdank-22128a63"},
+      {title: "PhD", name: "Seweryn Habdank-Wojewódzki", imageFile: { url: this.teamImagesPath + "sewi.png", caption: "Seweryn Habdank-Wojewódzki, PhD"}, linkedInUrl: "habdank"},
+      {title: "MA", name: "Monika Radwańska", imageFile: { url: this.teamImagesPath + "monia.png", caption: "Monika Radwańska, MA"}, linkedInUrl: "monika-radwanska-1666b314"},
+      {title: "MSc", name: "Felicja Habdank", imageFile: { url: this.teamImagesPath + "feli.png", caption: "Felicja Habdank, MSc"}, linkedInUrl: "felicja-habdank-2a45111b0"},
+      {title: "BEng", name: "Mikkel Aagaard", imageFile: { url: this.teamImagesPath + "mikkel.png", caption: "Mikkel Aagaard, BEng"}, linkedInUrl: "mikkel-aagaard-ab96585"}
     ]
 
     this.partners = [

@@ -5,6 +5,11 @@ export class Team {
 export class Member {
   title: string;
   name: string;
-  imageFileName: string;
+  imageFile: Image;
   linkedInUrl: string;
+}
+
+export class Image {
+  url: string;
+  caption: string;
 }
