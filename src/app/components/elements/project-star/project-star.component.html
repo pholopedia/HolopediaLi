@@ -3,7 +3,7 @@
   <div class="starMenu">
     <div *ngFor="let project of projects" class="starMenuItem" (click)="selectProject(project)" [ngStyle]="project.style">{{project.name}}</div>
   </div>
-  <div class="holoMandala" [ngStyle]="{'background-image': 'url(' + starBgUrl + ')'}">
+  <div class="holoMandala">
     <app-coin *ngFor="let coin of coins" [coinObverse]="getHexSide(coin.ObverseSettings, '91%')" [coinReverse]="getHexSide(coin.ReverseSettings)"
       [subtitle]="'Quantum Foundation Quantum Qtum'" [obverseText]="coin.ObverseText" (click)="selectHex(obverse, $event)"></app-coin>
   </div>

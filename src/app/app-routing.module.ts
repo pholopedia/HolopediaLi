@@ -15,6 +15,7 @@ import { Game2048hexComponent } from './components/pages/games/game2048hex/game2
 import { Game3d2048Component } from './components/pages/games/game3d2048/game3d2048.component';
 import { SocialComponent } from './components/pages/social/social.component';
 import { HolopediaTokenComponent } from './components/holopedia_token/holopedia_token.component';
+import { LinksComponent } from './components/links/links.component';
 
 const routes: Routes = [
   { path: 'holopedia_token',  component: HolopediaTokenComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'games/2048_3d',  component: Game3d2048Component },
   { path: 'hologram',  component: HologramComponent },
   { path: 'hologram/:holoid',  component: HologramComponent },
+  { path: 'links',  component: LinksComponent },
   // individual holo master coin
   // Default
   { path: '', component: HolopediaTokenComponent }

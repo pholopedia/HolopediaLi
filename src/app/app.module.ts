@@ -36,6 +36,7 @@ import { Game2048hexComponent } from './components/pages/games/game2048hex/game2
 import { Game3d2048Component } from './components/pages/games/game3d2048/game3d2048.component';
 import { HolopediaTokenComponent } from './components/holopedia_token/holopedia_token.component';
 import { LightboxModule } from 'ngx-lightbox';
+import { LinksComponent } from './components/links/links.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +60,7 @@ import { LightboxModule } from 'ngx-lightbox';
     Game2048hexComponent,
     Game3d2048Component,
     HolopediaTokenComponent,
+    LinksComponent,
   ],
   imports: [
     BrowserModule,
