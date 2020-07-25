@@ -12,7 +12,7 @@ export class NavigationComponent implements OnInit {
 
 
   menuItems: MenuItem[] = [
-    new MenuItem("Holopedia Token", "/holopedia_token", { hasPreview: true }),
+    new MenuItem("Holopedia Tokens", "/holopedia_token", { hasPreview: true }),
     new MenuItem("Holopedia Club", "/home", { hasPreview: true }),
     new MenuItem("Social", "/social"),
     new MenuItem("Contact", "/contact"),
