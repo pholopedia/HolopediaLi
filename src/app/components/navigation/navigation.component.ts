@@ -20,7 +20,7 @@ export class NavigationComponent implements OnInit {
     // new MenuItem("PINS Spinon", "http://pinsspinon.wodpress.com/", { isExternal: true, hasPreview: true }),
     new MenuItem("Holopedia Club", "https://holopediaclub.netlify.app/", { isExternal: true, hasPreview: true }),
     // new MenuItem("Timewaver & Healy", "https://quantumholopedia.eu/healy", { isExternal: true }),
-    new MenuItem("Holopedia Biohology", "https://quantumholopedia.eu/healy", { isExternal: true, hasPreview: true }),
+    new MenuItem("Holopedia Biohology", "", {  hasPreview: true }),
     // new MenuItem("Quantum Foundation Portals", "https://quantumfoundation.github.io/", { isExternal: true }),
   ]
 
