@@ -26,12 +26,14 @@ export class HolopediaTokenComponent implements OnInit {
 
   ngOnInit() {
     this.team.members = [
-      {title: "PhD", name: "Tadeusz Habdank-Wojewódzki", imageFile: { url: this.teamImagesPath + "tadeusz.png", caption: "Tadeusz Habdank-Wojewódzki, PhD"}, linkedInUrl: "tadeusz-habdank-22128a63"},
-      {title: "PhD", name: "Seweryn Habdank-Wojewódzki", imageFile: { url: this.teamImagesPath + "sewi.png", caption: "Seweryn Habdank-Wojewódzki, PhD"}, linkedInUrl: "habdank"},
-      {title: "MA", name: "Monika Radwańska", imageFile: { url: this.teamImagesPath + "monia.png", caption: "Monika Radwańska, MA"}, linkedInUrl: "monika-radwanska-1666b314"},
-      {title: "MSc", name: "Felicja Habdank", imageFile: { url: this.teamImagesPath + "feli.png", caption: "Felicja Habdank, MSc"}, linkedInUrl: "felicja-habdank-2a45111b0"},
-      {title: "BEng", name: "Mikkel Aagaard", imageFile: { url: this.teamImagesPath + "mikkel.png", caption: "Mikkel Aagaard, BEng"}, linkedInUrl: "mikkel-aagaard-ab96585"}
+      {title: "PhD", name: "Tadeusz Habdank-Wojewódzki", role: "Hybrid DLT algorithms in applications and algorithms for holographic sets and therapeutic relationships", imageFile: { url: this.teamImagesPath + "tadeusz.png", caption: "Tadeusz Habdank-Wojewódzki, PhD"}, linkedInUrl: "tadeusz-habdank-22128a63"},
+      {title: "PhD", name: "Seweryn Habdank-Wojewódzki", role: "Artificial Intelligence AI for interactive holographic humanoid projects", imageFile: { url: this.teamImagesPath + "sewi.png", caption: "Seweryn Habdank-Wojewódzki, PhD"}, linkedInUrl: "habdank"},
+      {title: "MA", name: "Monika Radwańska", role: "Direction and scenography for holographic sets", imageFile: { url: this.teamImagesPath + "monia.png", caption: "Monika Radwańska, MA"}, linkedInUrl: "monika-radwanska-1666b314"},
+      {title: "MA", name: "Bolesława Habdank-Wojewódzka", role: "Consciousness supporting artistic design in therapeutic applications", imageFile: { url: this.teamImagesPath + "slawa.png", caption: "Bolesława Habdank-Wojewódzka  , MA"}, linkedInUrl: "bolesława-habdank-wojewódzka-0949901b3"},
+      {title: "MSc", name: "Felicja Habdank", role: "Accounting and project's financial spervision", imageFile: { url: this.teamImagesPath + "feli.png", caption: "Felicja Habdank, MSc"}, linkedInUrl: "felicja-habdank-2a45111b0"},
+      {title: "BEng", name: "Mikkel Aagaard", role: "DLT and hApps development and network's maintainance", imageFile: { url: this.teamImagesPath + "mikkel.png", caption: "Mikkel Aagaard, BEng"}, linkedInUrl: "mikkel-aagaard-ab96585"}
     ]
+    
 
     this.partners = [
       { name: "Quantum Holopedia", imageFile: "qh.png", url: "http://quantumholopedia.eu/" },

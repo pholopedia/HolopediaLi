@@ -5,6 +5,7 @@ export class Team {
 export class Member {
   title: string;
   name: string;
+  role: string;
   imageFile: Image;
   linkedInUrl: string;
 }

@@ -22,13 +22,21 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     text-align: center;
+    grid-gap: 8px;
 
     img {
       width: 100%;
     }
+
+    .member {
+      &> * {
+        margin-bottom: 10px;
+        font-size: 22px;
+      }
     
-    .linkedin img {
-      width: 30px;
+      .linkedin img {
+        width: 60px;
+      }
     }
   }
 }
@@ -59,6 +67,9 @@
     transform: translateX(-50%);
   }
 }
+
+
+
 
 .partner {
   display: inline-block;
