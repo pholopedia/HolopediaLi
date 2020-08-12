@@ -12,7 +12,7 @@ export class NavigationComponent implements OnInit {
 
 
   menuItems: MenuItem[] = [
-    new MenuItem("Holopedia Tokens", "/holopedia_token", { hasPreview: true }),
+    new MenuItem("Holopedia Tokens Whitepaper", "/whitepaper", { hasPreview: true }),
     new MenuItem("Holopedia", "/home", { hasPreview: true }),
     new MenuItem("Social", "/social"),
     new MenuItem("Contact", "/contact", { hasPreview: true }),
@@ -20,7 +20,7 @@ export class NavigationComponent implements OnInit {
     // new MenuItem("PINS Spinon", "http://pinsspinon.wodpress.com/", { isExternal: true, hasPreview: true }),
     new MenuItem("Holopedia Club", "https://holopediaclub.netlify.app/", { isExternal: true, hasPreview: true }),
     // new MenuItem("Timewaver & Healy", "https://quantumholopedia.eu/healy", { isExternal: true }),
-    new MenuItem("Holopedia Biohology", "", {  hasPreview: true }),
+    new MenuItem("Holopedia Tokens", "/holopedia_token", {  hasPreview: true }),
     // new MenuItem("Quantum Foundation Portals", "https://quantumfoundation.github.io/", { isExternal: true }),
   ]
 

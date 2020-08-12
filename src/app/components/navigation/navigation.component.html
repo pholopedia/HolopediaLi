@@ -7,7 +7,7 @@
     <img [hidden]="itemHoveredName != 'Holopedia Biohology'" src="assets/images/menu/holopediabio.gif" alt=""> 
     <img [hidden]="itemHoveredName != 'Holopedia Club'" src="assets/images/menu/club.gif" alt=""> 
     <img [hidden]="itemHoveredName != 'Contact'" src="assets/images/menu/contact.gif" alt=""> 
-    <app-coin [hidden]="itemHoveredName != 'Holopedia Tokens'" [coinObverse]="getHexSide(tokenCoin.ObverseSettings, '100%')" [coinReverse]="getHexSide(tokenCoin.ReverseSettings)"
+    <app-coin [hidden]="itemHoveredName != 'Holopedia Tokens' && itemHoveredName != 'Holopedia Tokens Whitepaper'" [coinObverse]="getHexSide(tokenCoin.ObverseSettings, '100%')" [coinReverse]="getHexSide(tokenCoin.ReverseSettings)"
       [subtitle]="'Quantum Foundation Quantum Qtum'" ></app-coin>
     <app-coin [hidden]="itemHoveredName != 'Projects'" [coinObverse]="getHexSide(doctorCoin.ObverseSettings, '91%')" [coinReverse]="getHexSide(doctorCoin.ReverseSettings)"
       [subtitle]="'Quantum Foundation Quantum Qtum'" [obverseText]="doctorCoin.ObverseText"></app-coin>
