@@ -37,7 +37,7 @@ const routes: Routes = [
   { path: 'whitepaper',  component: WhitepaperComponent },
   // individual holo master coin
   // Default
-  { path: '', component: HolopediaTokenComponent }
+  { path: '', component: WhitepaperComponent }
 ];
 
 @NgModule({
