@@ -48,13 +48,14 @@ text {
 
 .widgets {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  padding: 50px 30px;
 }
 
 .widget {
   font-size: 26px;
   text-align: center;
-  margin: 40px 20px;
   font-weight: 600;
   cursor: pointer;
 
