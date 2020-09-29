@@ -137,5 +137,8 @@
       }
     }
   },
-  "defaultProject": "HolopediaLi"
+  "defaultProject": "HolopediaLi",
+  "cli": {
+    "analytics": false
+  }
 }

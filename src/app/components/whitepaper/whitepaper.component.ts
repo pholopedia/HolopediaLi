@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-whitepaper',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WhitepaperComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public auth: AuthService
+  ) { 
+    
+  }
 
   ngOnInit() {
   }
