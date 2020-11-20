@@ -17,6 +17,7 @@ import { NgxTwitterTimelineModule } from 'ngx-twitter-timeline';
 import { ProjectStarComponent } from './components/elements/project-star/project-star.component';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -79,7 +80,7 @@ import { YellowpaperComponent } from './components/yellowpaper/yellowpaper.compo
     // CoreModule,
     LightboxModule,
   ],
-  providers: [AngularFireAuth, AngularFireAuthGuard],
+  providers: [AngularFireAuth, AngularFireAuthGuard, CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
