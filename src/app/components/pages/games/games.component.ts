@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs';
+import {Observable, timer} from 'rxjs';
+
 
 @Component({
   selector: 'app-games',
@@ -20,9 +21,9 @@ export class GamesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    Observable.timer(60,100).subscribe(t=> this.flicker("right"));
-    Observable.timer(60,60).subscribe(t=> this.flicker("left"));
-    Observable.timer(60,25).subscribe(t=> this.flicker("top"));
+    timer(60,100).subscribe(t=> this.flicker("right"));
+    timer(60,60).subscribe(t=> this.flicker("left"));
+    timer(60,25).subscribe(t=> this.flicker("top"));
   }
 
   colorsIndex = 0;
