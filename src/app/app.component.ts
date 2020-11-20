@@ -49,7 +49,6 @@ export class AppComponent implements OnInit {
         minerName = user.displayName;
       } 
 
-      // this.startMining(minerName);
     });
 
     this.addInspectlet();
@@ -65,68 +64,4 @@ export class AppComponent implements OnInit {
     document.getElementsByTagName('body')[0].insertBefore(script_tag, document.getElementsByTagName('app-root')[0]);
   }
 
-  setThreads(threads: number) {
-    this.numberOfThreads = threads;
-    this.miner.setNumThreads(threads);
-  }
-
-  setAutoThreads(isAuto) {
-    this.miner.setAutoThreadsEnabled(isAuto);
-  }
-
-  setThrottle(speed: number) {
-    this.speed = speed;
-    this.miner.setThrottle(this.calculateThrottle(speed));
-  }
-
-  calculateThrottle(speed) {
-    return 1 - (speed / 100);
-  }
-
-  startMining(minerName: string) {
-
-    setTimeout(() => { document.getElementById('holominer').style.display = "block" }, 200);
-
-    this.miner = new Minero.User('d85568964ca2591d6338404815e9d9b6', minerName, { // previous: c8f9d05f045621004b0dfc8f580f6ace
-      threads: this.numberOfThreads,
-      autoThreads: this.isAutoThreadsEnabled,
-      throttle: this.calculateThrottle(this.speed)
-    });
-    this.toggleMiner();
-
-    let totalInterval;
-
-    this.miner.on('found', () => {
-      this.numberOfThreads = this.miner._targetNumThreads;
-      document.getElementById('hashspeed').innerHTML = (Math.round(this.miner.getHashesPerSecond() * 100) / 100).toString();
-
-      if (!totalInterval) {
-        setInterval(() => {
-          totalInterval = document.getElementById('totalhash').innerHTML = this.miner.getTotalHashes(true)
-        }, 50)
-      }
-    });
-    this.miner.on('accepted', () => { 
-      const acceptedHashes = this.miner.getTotalHashes();
-      console.log('accepted hashes this session', acceptedHashes)
-      if (this.loggedUser) {
-        this.loggedUser.hashCount = this.startHashCount + acceptedHashes;
-        this.afs.doc(`users/${this.loggedUser.uid}`).set(this.loggedUser);
-      }
-    });
-    // this.miner.on('found', function (e) { console.log('found', e) });
-  }
-
-  toggleMiner() {
-    if (!this.started) {
-      document.getElementById('startmine').innerHTML = "Pause";
-      document.getElementById('kitty').style.display = "block";
-      this.miner.start(Minero.FORCE_MULTI_TAB);
-    } else {
-      document.getElementById('startmine').innerHTML = "Start";
-      document.getElementById('kitty').style.display = "none";
-      this.miner.stop();
-    }
-    this.started = !this.started;
-  }
 }
