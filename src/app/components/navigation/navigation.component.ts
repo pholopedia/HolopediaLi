@@ -18,7 +18,7 @@ export class NavigationComponent implements OnInit {
     new MenuItem("Holopedia", "/home", { hasPreview: true }),
     new MenuItem("Projects", "/projects", { hasPreview: true }),
     new MenuItem("Contact", "/contact", { hasPreview: true }),
-    new MenuItem("Social", "/social"),
+    new MenuItem("Social", "/social", { hasPreview: true }),
   ]
 
   menuColors = ["#b9d4ec", "#ffe2b9", "#f1c5f3", "#caecf7", "#bff5af", "#ece6ac", "#fa96ab"];
@@ -36,6 +36,7 @@ export class NavigationComponent implements OnInit {
   tokenCoin: CoinSettings = new CoinSettings([], { url: "assets/images/coin/HP_Holopedia.png" }, [], { url: "assets/images/coin/HP_Holopedia.png" });
   doctorCoin: CoinSettings = new CoinSettings(["Holo Doctor"], { theme: "purple" }, [], { url: "assets/images/coin/eth_back.png" });
   qfCoin: CoinSettings = new CoinSettings("", { url:"https://quantumfunds.files.wordpress.com/2018/11/12star8frameqf.png", theme: "purple" }, [], { url: "assets/images/coin/HP_Holopedia.png" });
+  socialCoin: CoinSettings = new CoinSettings("", { url:"assets/images/social/3d_hp/email.png" }, [], { url: "assets/images/social/3d_hp/facebook.png" });
   itemHoveredName: string;
   itemPreviewName: string;
   itemSelected: MenuItem;

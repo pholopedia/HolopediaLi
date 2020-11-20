@@ -3,18 +3,25 @@
   <div class="menuHologram">
     <!-- <div *ngIf="itemHoveredName != 'Home'" id="revolverMaps"></div> -->
     <div class="menuItemPreviewName">{{itemPreviewName}}</div>
-    <img [hidden]="itemHoveredName != 'Holopedia Yellowpaper'" src="assets/images/menu/leia.gif" alt=""> 
-    <img [hidden]="itemHoveredName != 'Holopedia'" src="assets/images/menu/brain.gif" alt=""> 
-    <img [hidden]="itemHoveredName != 'Holopedia Biohology'" src="assets/images/menu/holopediabio.gif" alt=""> 
-    <img [hidden]="itemHoveredName != 'Holopedia Club'" src="assets/images/menu/club.gif" alt=""> 
-    <img [hidden]="itemHoveredName != 'Contact'" src="assets/images/menu/contact.gif" alt=""> 
-    <app-coin [hidden]="itemHoveredName != 'Holopedia Tokens'" [coinObverse]="getHexSide(tokenCoin.ObverseSettings, '100%')" [coinReverse]="getHexSide(tokenCoin.ReverseSettings)"
-      [subtitle]="'Quantum Foundation Quantum Qtum'" ></app-coin>
-    <app-coin [hidden]="itemHoveredName != 'Projects'" [coinObverse]="getHexSide(doctorCoin.ObverseSettings, '91%')" [coinReverse]="getHexSide(doctorCoin.ReverseSettings)"
-      [subtitle]="'Quantum Foundation Quantum Qtum'" [obverseText]="doctorCoin.ObverseText"></app-coin>
-    <app-coin [hidden]="itemHoveredName != 'Quantum Foundation'" [coinObverse]="getHexSide(qfCoin.ObverseSettings, '91%')" [coinReverse]="getHexSide(qfCoin.ReverseSettings)"
+    <img [hidden]="itemHoveredName != 'Holopedia Yellowpaper'" src="assets/images/menu/leia.gif" alt="">
+    <img [hidden]="itemHoveredName != 'Holopedia'" src="assets/images/menu/brain.gif" alt="">
+    <img [hidden]="itemHoveredName != 'Holopedia Biohology'" src="assets/images/menu/holopediabio.gif" alt="">
+    <img [hidden]="itemHoveredName != 'Holopedia Club'" src="assets/images/menu/club.gif" alt="">
+    <img [hidden]="itemHoveredName != 'Contact'" src="assets/images/menu/contact.gif" alt="">
+    <app-coin [hidden]="itemHoveredName != 'Holopedia Tokens'"
+      [coinObverse]="getHexSide(tokenCoin.ObverseSettings, '100%')"
+      [coinReverse]="getHexSide(tokenCoin.ReverseSettings)" [subtitle]="'Quantum Foundation Quantum Qtum'"></app-coin>
+    <app-coin [hidden]="itemHoveredName != 'Projects'" [coinObverse]="getHexSide(doctorCoin.ObverseSettings, '91%')"
+      [coinReverse]="getHexSide(doctorCoin.ReverseSettings)" [subtitle]="'Quantum Foundation Quantum Qtum'"
+      [obverseText]="doctorCoin.ObverseText"></app-coin>
+    <app-coin [hidden]="itemHoveredName != 'Quantum Foundation'"
+      [coinObverse]="getHexSide(qfCoin.ObverseSettings, '91%')" [coinReverse]="getHexSide(qfCoin.ReverseSettings)"
+      [subtitle]="'Quantum Foundation Quantum Qtum'" [obverseText]="qfCoin.ObverseText"></app-coin>
+    <app-coin [hidden]="itemHoveredName != 'Social'"
+      [coinObverse]="getHexSide(socialCoin.ObverseSettings)" [coinReverse]="getHexSide(socialCoin.ReverseSettings)"
       [subtitle]="'Quantum Foundation Quantum Qtum'" [obverseText]="qfCoin.ObverseText"></app-coin>
   </div>
+
 
   <div class="sevenlevels">
     <!-- <div *ngFor="let item of menuItems">
@@ -22,9 +29,7 @@
     </div> -->
     <div *ngFor="let item of menuItems; let i = index">
       <div class="menuitem" (click)="menuItemClicked(item)" [ngStyle]="{'color': menuColors[i]}">
-        <span 
-          *ngFor="let nameLetter of item.Name.split(''); let i = index;" 
-          (mouseenter)="menuItemHovered(item)"
+        <span *ngFor="let nameLetter of item.Name.split(''); let i = index;" (mouseenter)="menuItemHovered(item)"
           (mouseleave)="menuItemBlur()"
           [ngStyle]="{'display': 'inline-block', 'transform': ' translateY('+sineVal(i, item.Name.length)+'px)'}">
           {{ (nameLetter != ' ') ? nameLetter : '&nbsp;' }}
@@ -33,9 +38,9 @@
     </div>
     <div class=""><a href="https://holopediaview.simplesite.com/" target="_blank">Holopedia Portal</a></div>
     <div class=""><a routerLink="links">Holopedia Links</a></div>
-    
-    
-    
+
+
+
   </div>
 
   <div class="widgets">
@@ -45,14 +50,14 @@
         Holopedia Princesses game
       </div>
     </div>
-  
+
     <div class="widget">
       <div routerLink="/games/2048" class="princesses">
         <img src="assets/images/2048/2048.jpg" alt="">
         Holopedia 2048 game
       </div>
     </div>
-  
+
     <div class="widget">
       <div routerLink="/games/2048_3d" class="princesses">
         <img src="assets/images/3d2048_icon.gif" alt="">
@@ -69,5 +74,5 @@
   </div>
 
   <div id="revolverMaps"></div>
-  
+
 </div>
