@@ -1,29 +1,74 @@
-<div class="media">
-  <div class="medium">
-    <div class="wrap">
-      <a href=" https://www.linkedin.com/company/68682824/" target="_blank">
-        <div class="icon"><img src="assets/images/social/linkedin.png" alt=""></div>
-        <div class="lable">Holopedia HPA LinkedIn profile</div>
-      </a>
-    </div>
-  </div>
-  <div class="medium">
-    <div class="wrap">
-      <a href="https://discord.com/channels/726389442453176352" target="_blank">
-        <div class="icon"><img src="assets/images/social/discord.png" alt=""></div>
-        <div class="lable">Holopedia HPA Discord community</div>
-      </a>
-    </div>
-  </div>
-  <div class="medium">
-    <div class="wrap">
-      <a href="https://t.me/holopedia">
-        <div class="icon"><img src="assets/images/social/telegram.png" alt=""></div>
-        <div class="lable">Holopedia HPA Telegram messanger</div>
-      </a>
-    </div>
-  </div>
+<div class="social_icons">
+  <ng-container 
+    [ngTemplateOutlet]="socialIcon" 
+    [ngTemplateOutletContext]="{
+      imageUrl:'assets/images/social/3d_hp/youtube.png',
+      link:'https://t.me/holopedia',
+      text:'Holopedia Tokens YouTube TV'
+    }">
+  </ng-container>
+  <ng-container 
+    [ngTemplateOutlet]="socialIcon" 
+    [ngTemplateOutletContext]="{
+      imageUrl:'assets/images/social/3d_hp/email.png',
+      link:'https://t.me/holopedia',
+      text:'Holopedia Tokens Email'
+    }">
+  </ng-container>
+  <ng-container 
+    [ngTemplateOutlet]="socialIcon" 
+    [ngTemplateOutletContext]="{
+      imageUrl:'assets/images/social/3d_hp/twitter.png',
+      link:'https://t.me/holopedia',
+      text:'Holopedia Tokens Twitter News'
+    }">
+  </ng-container>
+  <ng-container 
+    [ngTemplateOutlet]="socialIcon" 
+    [ngTemplateOutletContext]="{
+      imageUrl:'assets/images/social/3d_hp/telegram.png',
+      link:'https://t.me/holopedia',
+      text:'Holopedia Tokens Telegram Messenger'
+    }">
+  </ng-container>
+  <ng-container 
+    [ngTemplateOutlet]="socialIcon" 
+    [ngTemplateOutletContext]="{
+      imageUrl:'assets/images/social/3d_hp/linkedIn.png',
+      link:'https://www.linkedin.com/company/68682824/',
+      text:'Holopedia Tokens LinkedIn Profile'
+    }">
+  </ng-container>
+  <ng-container 
+    [ngTemplateOutlet]="socialIcon" 
+    [ngTemplateOutletContext]="{
+      imageUrl:'assets/images/social/3d_hp/facebook.png',
+      link:'https://www.linkedin.com/company/68682824/',
+      text:'Holopedia Tokens Facebook Profile'
+    }">
+  </ng-container>
+  <ng-container 
+    [ngTemplateOutlet]="socialIcon" 
+    [ngTemplateOutletContext]="{
+      imageUrl:'assets/images/social/3d_hp/discord.png',
+      link:'https://www.linkedin.com/company/68682824/',
+      text:'Holopedia Tokens Discord Community'
+    }">
+  </ng-container>
 </div>
+
+<ng-template #socialIcon let-imageUrl='imageUrl' let-link='link' let-text='text'>
+  <div class="social_icon">
+    <a [href]="link" target="_blank">
+      <div class="image">
+        <img [src]="imageUrl" [alt]="text">
+      </div>
+      <div class="caption">
+        {{text}}
+      </div>
+    </a>
+  </div>
+</ng-template>
 
 <div class="social-page" fxLayout="row" fxLayout.lt-md="column" fxFlexFill>
   <div class="youtube column-3" fxFlex="30">
