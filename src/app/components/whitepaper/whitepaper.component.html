@@ -1,4 +1,4 @@
-<div *ngIf="auth.user | async; then authenticated else guest">
+<div *ngIf="subscribed; then authenticated else guest">
     <!-- template will replace this div -->
 </div>
 
@@ -304,9 +304,15 @@
 <!-- User NOT logged in -->
 <ng-template #guest>
     <div class="user-info">
-        <div>Sign in to view the whitepaper</div>
-        <button class="login-button" (click)="auth.googleLogin()">
-            <i class="fa fa-google"></i> Connect Google
-        </button>
+        <img src="assets/images/whitepaper/hp_yellow_paper.png" alt="">
+        <div class="subscribe_button">
+            <div class="description">Please, provide your name and email address and get access to Holopedia's yellowpaper</div>
+            <div class="name"> Name: <input type="text" name="name" id="" [(ngModel)]="sub_name"></div>
+            <div class="email">Email: <input type="text" name="email" id="" [(ngModel)]="sub_email"></div>
+            <div class="button"><button (click)="subscribe()">Subscribe</button></div>
+        </div>
+    </div>
+    <div class="yellowpaper-signup-caption">
+        Holopedia Tokens are established on Ethereum network as an ERC20 smart contracts
     </div>
 </ng-template>

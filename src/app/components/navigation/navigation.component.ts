@@ -12,7 +12,7 @@ export class NavigationComponent implements OnInit {
 
 
   menuItems: MenuItem[] = [
-    new MenuItem("Holopedia Whitepaper", "/whitepaper", { hasPreview: true }),
+    new MenuItem("Holopedia Yellowpaper", "/whitepaper", { hasPreview: true }),
     new MenuItem("Holopedia Tokens", "/holopedia_token", {  hasPreview: true }),
     new MenuItem("Holopedia Club", "https://holopediaclub.netlify.app/", { isExternal: true, hasPreview: true }),
     new MenuItem("Holopedia", "/home", { hasPreview: true }),

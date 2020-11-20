@@ -15,6 +15,7 @@ export class ItemsService {
 
   addItem(item: any, collectionName: string) {
     const promise = new Promise((resolve, reject) => {
+        item.creationDate = Date.now();
         this.db.collection(collectionName).add(item)
         .then((data) => { resolve(data); })
         .catch(error => reject(error));
