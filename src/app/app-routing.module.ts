@@ -16,7 +16,7 @@ import { Game3d2048Component } from './components/pages/games/game3d2048/game3d2
 import { SocialComponent } from './components/pages/social/social.component';
 import { HolopediaTokenComponent } from './components/holopedia_token/holopedia_token.component';
 import { LinksComponent } from './components/links/links.component';
-import { WhitepaperComponent } from './components/whitepaper/whitepaper.component';
+import { YellowpaperComponent } from './components/yellowpaper/yellowpaper.component';
 
 const routes: Routes = [
   { path: 'holopedia_token',  component: HolopediaTokenComponent },
@@ -34,10 +34,10 @@ const routes: Routes = [
   { path: 'hologram',  component: HologramComponent },
   { path: 'hologram/:holoid',  component: HologramComponent },
   { path: 'links',  component: LinksComponent },
-  { path: 'whitepaper',  component: WhitepaperComponent },
+  { path: 'yellowpaper',  component: YellowpaperComponent },
   // individual holo master coin
   // Default
-  { path: '', component: WhitepaperComponent }
+  { path: '', component: YellowpaperComponent }
 ];
 
 @NgModule({

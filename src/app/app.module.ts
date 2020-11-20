@@ -37,7 +37,7 @@ import { Game3d2048Component } from './components/pages/games/game3d2048/game3d2
 import { HolopediaTokenComponent } from './components/holopedia_token/holopedia_token.component';
 import { LightboxModule } from 'ngx-lightbox';
 import { LinksComponent } from './components/links/links.component';
-import { WhitepaperComponent } from './components/whitepaper/whitepaper.component';
+import { YellowpaperComponent } from './components/yellowpaper/yellowpaper.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +62,7 @@ import { WhitepaperComponent } from './components/whitepaper/whitepaper.componen
     Game3d2048Component,
     HolopediaTokenComponent,
     LinksComponent,
-    WhitepaperComponent,
+    YellowpaperComponent,
   ],
   imports: [
     BrowserModule,

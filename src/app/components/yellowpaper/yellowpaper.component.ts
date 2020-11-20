@@ -3,11 +3,11 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 import { ItemsService } from 'src/app/services/firestore/item.service';
 
 @Component({
-  selector: 'app-whitepaper',
-  templateUrl: './whitepaper.component.html',
-  styleUrls: ['./whitepaper.component.scss']
+  selector: 'app-yellowpaper',
+  templateUrl: './yellowpaper.component.html',
+  styleUrls: ['./yellowpaper.component.scss']
 })
-export class WhitepaperComponent implements OnInit {
+export class YellowpaperComponent implements OnInit {
 
   subscribed = false
   subscribersCN: string = 'subscribers';
