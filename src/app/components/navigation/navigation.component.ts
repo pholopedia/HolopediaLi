@@ -33,7 +33,7 @@ export class NavigationComponent implements OnInit {
 
   sample = "questions"
   Math: any = Math;
-  tokenCoin: CoinSettings = new CoinSettings([], { url: "assets/images/coin/HP_Holopedia.png" }, [], { url: "assets/images/coin/HP_Holopedia.png" });
+  tokenCoin: CoinSettings = new CoinSettings([], { url: "assets/images/coin/HP_Holopedia.png" }, [], { url: "assets/images/menu/HPA.png" });
   doctorCoin: CoinSettings = new CoinSettings(["Holo Doctor"], { theme: "purple" }, [], { url: "assets/images/coin/eth_back.png" });
   qfCoin: CoinSettings = new CoinSettings("", { url:"https://quantumfunds.files.wordpress.com/2018/11/12star8frameqf.png", theme: "purple" }, [], { url: "assets/images/coin/HP_Holopedia.png" });
   socialCoin: CoinSettings = new CoinSettings("", { url:"assets/images/social/3d_hp/email.png" }, [], { url: "assets/images/social/3d_hp/facebook.png" });

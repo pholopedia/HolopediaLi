@@ -16,7 +16,8 @@ export class HolopediaTokenComponent implements OnInit {
   imagesPath = "assets/images/";
   coinImagesPath = this.imagesPath + "coin/";
   teamImagesPath = this.imagesPath + "team/";
-  coinImage = {url: this.coinImagesPath + "HP_Holopedia.png", caption: "Holopedia Coin"};
+  coinImage = {url: this.coinImagesPath + "HP_Holopedia.png", caption: "Holopedia Coin Obverse"};
+  coinReverseImage = {url: this.imagesPath + "menu/HPA.png", caption: "Holopedia Coin Reverse"};
   holopediaProjectTable = {url: this.coinImagesPath + "HolopediaProjectTable.png", caption: "Holopedia Project HP Token"};
   hybridImage = {url: this.coinImagesPath + "Private_Public_DLT.png", caption: "Schematic for hybrid DLT, courtesy https://www.he3labs.com/"};
 
