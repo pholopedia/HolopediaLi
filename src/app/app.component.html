@@ -1,10 +1,10 @@
 
 
-<div class="maintenance">
+<div class="maintenance" *ngIf="isMaintenance">
   This site is currently under the maintenance
 </div>
 
-<div class="float-box" *ngIf="false">
+<div class="float-box" *ngIf="!isMaintenance">
   <div class="box">
 
     <div *ngIf="auth.user | async; then authenticated else guest">
@@ -63,8 +63,8 @@
   </div>
 </div>
 
-<app-topbar *ngIf="false"></app-topbar>
-<div class="content" fxLayout="row" fxLayout.lt-md="column" fxFlexFill *ngIf="false">
+<app-topbar *ngIf="!isMaintenance"></app-topbar>
+<div class="content" fxLayout="row" fxLayout.lt-md="column" fxFlexFill *ngIf="!isMaintenance">
   <div *ngIf="showNavigation" class="navigation" fxFlex="20" fxFlex.lt-md="100">
     <app-navigation></app-navigation>
   </div>

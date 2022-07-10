@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   speed = 50;
   loggedUser: User;
   startHashCount;
+  isMaintenance = false;
 
   constructor(
     private router: Router,
